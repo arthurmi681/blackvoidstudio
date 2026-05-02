@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Black Void Studio — Sites que Transformam Negócios</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<!-- ════════════════════════════════════
+   JAVASCRIPT AGENT
+════════════════════════════════════ -->
+<link rel="stylesheet" href="agent/styles.css"/>
+</head>
+<body>
+
+<!-- CURSORS -->
+<div id="cur"></div>
+<div id="cur2"></div>
+
+<!-- PARTICLES -->
+<div id="particles-js"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scrollProg"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">BLACK <span>VOID</span></div>
+  <div class="loader-bar-wrap"><div id="loaderBar"></div></div>
+  <div class="loader-meta">
+    <span id="loaderStatus">Iniciando...</span>
+    <span id="loaderPct">0%</span>
+  </div>
+</div>
+
+<!-- TOASTS -->
+<div id="toast-container"></div>
+
+<!-- ════════════ HEADER ════════════ -->
+<header id="mainHeader">
+  <a class="logo-wrap" href="#" onclick="showPage('home');return false;">
+    <div class="logo-glyph">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M11 2L20 7V15L11 20L2 15V7L11 2Z" fill="white"/>
+        <path d="M11 8L16 11V14L11 17L6 14V11L11 8Z" fill="rgba(0,0,0,0.7)"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-name">BLACK <span>VOID</span></div>
+      <div class="logo-sub">Studio</div>
+    </div>
+  </a>
+
+  <nav class="nav-desktop">
+    <button class="nav-btn active" onclick="showPage('home')">Home</button>
+    <button class="nav-btn" onclick="showPage('servicos')">Serviços</button>
+    <button class="nav-btn" onclick="showPage('cases')">Portfolio</button>
+    <button class="nav-btn" onclick="showPage('sobre')">Sobre</button>
+    <a class="nav-cta" href="#" onclick="showPage('contato');return false;">Solicitar Orçamento</a>
+  </nav>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- ════════════ HOME ════════════ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-label">
+        <span class="hero-label-dot"></span>
+        <span class="hero-label-line"></span>
+        Agência Digital · São Paulo
+      </div>
+      <h1 class="hero-h1">
+        <span class="w1">PRESENÇA</span>
+        <span class="w2">DIGITAL</span>
+        <span class="w3">QUE VENDE</span>
+      </h1>
+      <p class="hero-tagline">
+        Transformamos pequenas empresas em marcas profissionais online — sites modernos, rápidos e que convertem.
+      </p>
+      <div class="hero-btns">
+        <a class="btn-prim" href="#" onclick="showPage('contato');return false;">
+          Quero meu site
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-ghost" href="#" onclick="showPage('cases');return false;">Ver portfólio</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card-stack">
+        <div class="hcard hcard-back2">
+          <div class="hcard-img">
+            <div class="hcard-mockup">
+              <div class="hcard-mock-bar">
+                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
+                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
+                <div class="hcard-mock-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="hcard-mock-lines">
+                <div class="hcard-mock-line accent" style="width:70%"></div>
+                <div class="hcard-mock-line"></div>
+                <div class="hcard-mock-line short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hcard hcard-back1">
+          <div class="hcard-img">
+            <div class="hcard-mockup">
+              <div class="hcard-mock-bar">
+                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
+                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
+                <div class="hcard-mock-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="hcard-mock-lines">
+                <div class="hcard-mock-line accent" style="width:55%"></div>
+                <div class="hcard-mock-line med"></div>
+                <div class="hcard-mock-line tiny"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hcard hcard-main">
+          <div class="hcard-img">
+            <div class="hcard-mockup">
+              <div class="hcard-mock-bar">
+                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
+                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
+                <div class="hcard-mock-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="hcard-mock-lines">
+                <div class="hcard-mock-line accent"></div>
+                <div class="hcard-mock-line"></div>
+                <div class="hcard-mock-line med"></div>
+                <div class="hcard-mock-line short"></div>
+                <div class="hcard-mock-line accent" style="width:50%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hcard-body">
+            <div class="hcard-tag">✦ Site em produção</div>
+            <div class="hcard-name">Restaurante Bella Vita</div>
+            <div class="hcard-desc">Design moderno + reservas online integradas</div>
+            <div class="hcard-metrics">
+              <div class="hcard-metric">
+                <span class="hcard-metric-val">+180%</span>
+                <span class="hcard-metric-lbl">Visitas</span>
+              </div>
+              <div class="hcard-metric">
+                <span class="hcard-metric-val">14d</span>
+                <span class="hcard-metric-lbl">Entrega</span>
+              </div>
+              <div class="hcard-metric">
+                <span class="hcard-metric-val">★4.9</span>
+                <span class="hcard-metric-lbl">Cliente</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="scroll-bar"></div>
+      Scroll para explorar
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">Design Profissional</div>
+      <div class="marquee-item">Sites Responsivos</div>
+      <div class="marquee-item">SEO Otimizado</div>
+      <div class="marquee-item">Entrega em 14 dias</div>
+      <div class="marquee-item">Suporte Dedicado</div>
+      <div class="marquee-item">Domínio + Hospedagem Incluso</div>
+      <div class="marquee-item">Certificado SSL</div>
+      <div class="marquee-item">Black Void Studio</div>
+      <div class="marquee-item">Design Profissional</div>
+      <div class="marquee-item">Sites Responsivos</div>
+      <div class="marquee-item">SEO Otimizado</div>
+      <div class="marquee-item">Entrega em 14 dias</div>
+      <div class="marquee-item">Suporte Dedicado</div>
+      <div class="marquee-item">Domínio + Hospedagem Incluso</div>
+      <div class="marquee-item">Certificado SSL</div>
+      <div class="marquee-item">Black Void Studio</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-strip">
+    <div class="stat-cell">
+      <div class="stat-num"><span class="cnt" data-target="47">0</span><span class="stat-suffix">+</span></div>
+      <div class="stat-label">Sites entregues com sucesso</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><span class="cnt" data-target="14">0</span><span class="stat-suffix">d</span></div>
+      <div class="stat-label">Prazo médio de entrega</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><span class="cnt" data-target="98">0</span><span class="stat-suffix">%</span></div>
+      <div class="stat-label">Clientes satisfeitos</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num"><span class="cnt" data-target="3">0</span><span class="stat-suffix">m</span></div>
+      <div class="stat-label">Meses de suporte pós-entrega</div>
+    </div>
+  </div>
+
+  <!-- PROBLEMA / SOLUÇÃO -->
+  <section class="problem-section">
+    <div class="problem-grid">
+      <div class="problem-text reveal-up">
+        <div class="section-eyebrow">O problema real</div>
+        <h2>Sem site,<br>você é <span>invisível</span></h2>
+        <p>Em 2025, quando alguém precisa de um produto ou serviço, a primeira coisa que faz é pesquisar no Google. Se sua empresa não aparece — ou pior, aparece com uma presença amadora — você perde para o concorrente.</p>
+        <div class="problem-highlight">
+          <p>Todo negócio, independente do tamanho, merece uma vitrine digital que reflita sua qualidade e potencial.</p>
+        </div>
+        <p>A Black Void Studio existe para mudar isso. Criamos sites profissionais que transformam sua presença online e geram resultados reais para o seu negócio.</p>
+      </div>
+      <div class="before-after reveal-up" style="transition-delay:.2s">
+        <div class="ba-card">
+          <div class="ba-header">
+            <span class="ba-badge before">Antes</span>
+            <span class="ba-title">Sem presença online</span>
+          </div>
+          <div class="ba-body">
+            <ul class="ba-list">
+              <li><span class="icon">✗</span> Clientes não encontram sua empresa</li>
+              <li><span class="icon">✗</span> Perde credibilidade para concorrentes</li>
+              <li><span class="icon">✗</span> Dependente só de indicações</li>
+              <li><span class="icon">✗</span> Sem controle da sua imagem</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ba-arrow">↓</div>
+        <div class="ba-card after">
+          <div class="ba-header">
+            <span class="ba-badge after">Depois</span>
+            <span class="ba-title">Black Void Site</span>
+          </div>
+          <div class="ba-body">
+            <ul class="ba-list">
+              <li><span class="icon" style="color:var(--accent)">✓</span> Presente no Google 24/7</li>
+              <li><span class="icon" style="color:var(--accent)">✓</span> Imagem profissional e confiável</li>
+              <li><span class="icon" style="color:var(--accent)">✓</span> Novos clientes todo dia</li>
+              <li><span class="icon" style="color:var(--accent)">✓</span> Controle total da sua marca</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESSO -->
+  <section class="process-section">
+    <div class="process-head reveal-up">
+      <div>
+        <div class="section-eyebrow">Como funciona</div>
+        <h2>Do contato ao<br>site ao <span>ar</span></h2>
+      </div>
+      <p>Nosso processo é simples, transparente e focado em entregar o melhor resultado para o seu negócio — sem complicações.</p>
+    </div>
+    <div class="process-steps">
+      <div class="proc-step reveal-up">
+        <div class="proc-num">01</div>
+        <span class="proc-icon">💬</span>
+        <h3>Conversa Inicial</h3>
+        <p>Entendemos seu negócio, seus objetivos e o que você precisa do site. Sem jargões, direto ao ponto.</p>
+        <span class="proc-days">Dia 1</span>
+      </div>
+      <div class="proc-step reveal-up" style="transition-delay:.1s">
+        <div class="proc-num">02</div>
+        <span class="proc-icon">🎨</span>
+        <h3>Design & Proposta</h3>
+        <p>Desenvolvemos o layout e a identidade visual. Você aprova antes de qualquer linha de código.</p>
+        <span class="proc-days">Dias 2–5</span>
+      </div>
+      <div class="proc-step reveal-up" style="transition-delay:.2s">
+        <div class="proc-num">03</div>
+        <span class="proc-icon">⚡</span>
+        <h3>Desenvolvimento</h3>
+        <p>Construímos o site completo: responsivo, otimizado para SEO e ultra rápido em qualquer dispositivo.</p>
+        <span class="proc-days">Dias 6–12</span>
+      </div>
+      <div class="proc-step reveal-up" style="transition-delay:.3s">
+        <div class="proc-num">04</div>
+        <span class="proc-icon">🚀</span>
+        <h3>Lançamento</h3>
+        <p>Configuramos domínio, hospedagem e SSL. Seu site vai ao ar e você começa a receber clientes.</p>
+        <span class="proc-days">Dia 14</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACOTE -->
+  <section class="package-section">
+    <div class="package-layout">
+      <div class="pkg-text reveal-up">
+        <div class="section-eyebrow">Nosso pacote</div>
+        <h2>Tudo que<br>você precisa,<br><span>incluso</span></h2>
+        <p>Criamos sites completos para pequenas empresas que ainda não possuem presença online — ou que querem modernizar o que já existe.</p>
+
+        <div class="pkg-price-box">
+          <div class="pkg-price-label">Investimento total</div>
+          <div class="pkg-price-old">De R$ 2.500,00</div>
+          <div class="pkg-price-val">R$ 1.497<small>,00</small></div>
+          <div class="pkg-price-note">Entrada de <strong>R$ 750,00</strong> + R$ 747,00 na entrega</div>
+        </div>
+
+        <ul class="pkg-includes-list">
+          <li><span class="pkg-check">✓</span> Site completo com 5+ páginas</li>
+          <li><span class="pkg-check">✓</span> Design moderno e responsivo</li>
+          <li><span class="pkg-check">✓</span> Registro de domínio (1 ano)</li>
+          <li><span class="pkg-check">✓</span> Hospedagem premium (1 ano)</li>
+          <li><span class="pkg-check">✓</span> Certificado SSL incluído</li>
+          <li><span class="pkg-check">✓</span> Otimização SEO básica</li>
+          <li><span class="pkg-check">✓</span> Formulário de contato funcional</li>
+          <li><span class="pkg-check">✓</span> Integração com redes sociais</li>
+          <li><span class="pkg-check">✓</span> 3 meses de suporte técnico</li>
+          <li><span class="pkg-check">✓</span> Entrega em até 14 dias</li>
+        </ul>
+      </div>
+
+      <div class="pkg-card reveal-up" style="transition-delay:.2s">
+        <div class="pkg-card-header">
+          <div class="pkg-card-tag">✦ Mais popular</div>
+          <h3>Site Essencial Pro</h3>
+          <p class="pkg-card-desc">A solução completa para sua empresa conquistar o mundo digital.</p>
+        </div>
+        <div class="pkg-card-body">
+          <ul class="pkg-card-features">
+            <li><span class="ck">✓</span> Home + Sobre + Serviços + Contato</li>
+            <li><span class="ck">✓</span> Até 2 páginas extras personalizadas</li>
+            <li><span class="ck">✓</span> Layout 100% responsivo (mobile-first)</li>
+            <li><span class="ck">✓</span> Velocidade de carregamento otimizada</li>
+            <li><span class="ck">✓</span> Google Analytics integrado</li>
+            <li><span class="ck">✓</span> Meta tags e SEO configurado</li>
+            <li><span class="ck">✓</span> Botão WhatsApp flutuante</li>
+            <li><span class="ck">✓</span> Aprovação prévia do design</li>
+          </ul>
+          <div class="pkg-card-pricing">
+            <p>Investimento total</p>
+            <div class="val">R$ 1.497</div>
+            <div class="entry">Entrada: <strong>R$ 750</strong> · Restante na entrega</div>
+          </div>
+          <a class="btn-prim" href="#" onclick="showPage('contato');return false;" style="width:100%;justify-content:center;">
+            Solicitar agora
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASES PREVIEW -->
+  <section class="cases-preview">
+    <div class="cases-head reveal-up">
+      <div>
+        <div class="section-eyebrow">Portfólio</div>
+        <h2>Nossos<br><span>trabalhos</span></h2>
+      </div>
+      <div class="cases-head-right">
+        <p>Sites reais que transformaram negócios reais.</p>
+        <a class="btn-ghost" href="#" onclick="showPage('cases');return false;" style="margin-top:1.5rem;display:inline-flex;">
+          Ver todos
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-left:8px"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card feat">
+        <div class="case-card-inner">
+          <div class="case-mock">
+            <div class="case-site-preview">
+              <div class="site-topbar">
+                <div class="site-dot" style="background:#ff5f56"></div>
+                <div class="site-dot" style="background:#ffbd2e"></div>
+                <div class="site-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="site-content">
+                <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.08),transparent)">
+                  <div class="site-hero-mock-title" style="background:rgba(200,255,0,.3)"></div>
+                </div>
+                <div class="site-rows">
+                  <div class="site-row"></div>
+                  <div class="site-row" style="width:80%"></div>
+                  <div class="site-row accent-row" style="width:40%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-overlay">
+          <div class="case-cat">Gastronomia</div>
+          <div class="case-title">Restaurante Bella Vita</div>
+          <div class="case-tag-row">
+            <span class="case-tag">Site + Reservas</span>
+            <span class="case-tag">+180% visitas</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-inner">
+          <div class="case-mock">
+            <div class="case-site-preview">
+              <div class="site-topbar">
+                <div class="site-dot" style="background:#ff5f56"></div>
+                <div class="site-dot" style="background:#ffbd2e"></div>
+                <div class="site-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="site-content">
+                <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(0,245,255,.06),transparent)">
+                  <div class="site-hero-mock-title" style="background:rgba(0,245,255,.3)"></div>
+                </div>
+                <div class="site-rows">
+                  <div class="site-row"></div>
+                  <div class="site-row" style="background:rgba(0,245,255,.12);width:70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-overlay">
+          <div class="case-cat">Saúde & Beleza</div>
+          <div class="case-title">Studio Orquídea</div>
+          <div class="case-tag-row">
+            <span class="case-tag">Portfólio + Agenda</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-inner">
+          <div class="case-mock">
+            <div class="case-site-preview">
+              <div class="site-topbar">
+                <div class="site-dot" style="background:#ff5f56"></div>
+                <div class="site-dot" style="background:#ffbd2e"></div>
+                <div class="site-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="site-content">
+                <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(255,60,172,.06),transparent)">
+                  <div class="site-hero-mock-title" style="background:rgba(255,60,172,.3)"></div>
+                </div>
+                <div class="site-rows">
+                  <div class="site-row"></div>
+                  <div class="site-row" style="background:rgba(255,60,172,.1);width:60%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-overlay">
+          <div class="case-cat">Moda & Varejo</div>
+          <div class="case-title">Boutique Fleur</div>
+          <div class="case-tag-row">
+            <span class="case-tag">E-commerce</span>
+          </div>
+        </div>
+      </div>
+      <div class="case-card">
+        <div class="case-card-inner">
+          <div class="case-mock">
+            <div class="case-site-preview">
+              <div class="site-topbar">
+                <div class="site-dot" style="background:#ff5f56"></div>
+                <div class="site-dot" style="background:#ffbd2e"></div>
+                <div class="site-dot" style="background:#27c93f"></div>
+              </div>
+              <div class="site-content">
+                <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.06),transparent)">
+                  <div class="site-hero-mock-title" style="background:rgba(200,255,0,.2)"></div>
+                </div>
+                <div class="site-rows">
+                  <div class="site-row"></div>
+                  <div class="site-row accent-row" style="width:50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="case-overlay">
+          <div class="case-cat">Construção Civil</div>
+          <div class="case-title">Construtora Álvarez</div>
+          <div class="case-tag-row">
+            <span class="case-tag">Site Institucional</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testimonials">
+    <div class="test-head reveal-up">
+      <div class="section-eyebrow">Clientes</div>
+      <h2>O que dizem sobre<br>a <span>Black Void</span></h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal-up">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Antes do site, minha pizzaria dependia só de panfletos. Com a Black Void, agora recebo pedidos e reservas pelo Google todo dia. Valeu cada centavo.</p>
+        <div class="test-author">
+          <div class="test-avatar">🍕</div>
+          <div>
+            <div class="test-name">Roberto Santana</div>
+            <div class="test-role">Pizzaria Dom Roberto · São Paulo</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal-up" style="transition-delay:.1s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">O Arthur foi muito atencioso, entendeu meu negócio perfeitamente. O site ficou lindo e minha clientela cresceu muito. Super recomendo!</p>
+        <div class="test-author">
+          <div class="test-avatar">💅</div>
+          <div>
+            <div class="test-name">Carla Mendes</div>
+            <div class="test-role">Studio Carla Nails · Santos</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card reveal-up" style="transition-delay:.2s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">Profissional demais. Entregaram no prazo prometido, com um resultado que superou minhas expectativas. Agora tenho orgulho de mostrar o site para clientes.</p>
+        <div class="test-author">
+          <div class="test-avatar">🏗️</div>
+          <div>
+            <div class="test-name">Marcio Ferreira</div>
+            <div class="test-role">MF Reformas · ABC Paulista</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="home-cta">
+    <div class="home-cta-orb"></div>
+    <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.5rem;">
+      Pronto para começar?
+    </div>
+    <h2 class="reveal-up">SUA EMPRESA<br>MERECE UM<br><span>SITE ASSIM</span></h2>
+    <p class="reveal-up">Não deixe mais clientes irem para o concorrente. Entre em contato hoje e em 14 dias seu negócio está online.</p>
+    <div class="btns reveal-up">
+      <a class="btn-prim" href="#" onclick="showPage('contato');return false;">
+        Solicitar orçamento grátis
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+        <a class="btn-ghost" href="https://wa.me/16725592467" target="_blank">
+        💬 Falar no WhatsApp
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- ════════════ SOBRE ════════════ -->
+<div id="page-sobre" class="page">
+  <section class="sobre-layout" style="padding-top:160px;padding-left:5%;padding-right:5%;">
+    <div class="sobre-left reveal-up">
+      <div class="section-eyebrow">Quem somos</div>
+      <h1>A <em>Black Void</em><br>Studio</h1>
+      <p>Somos uma agência digital especializada em transformar pequenas e médias empresas em marcas profissionais online. Cada site que entregamos é tratado com a mesma atenção e cuidado que uma grande empresa receberia.</p>
+      <div class="sobre-mission">
+        <p>Nossa missão é capacitar pequenas empresas a alcançar novos patamares de sucesso por meio de websites profissionais, modernos e eficazes.</p>
+      </div>
+      <p>Sob a liderança de Arthur Miyazaki, construímos não apenas sites — construímos pontes digitais que conectam negócios aos seus clientes de forma duradoura.</p>
+      <div class="hero-btns" style="margin-top:2rem;">
+        <a class="btn-prim" href="#" onclick="showPage('contato');return false;">Trabalhar com a gente</a>
+        <a class="btn-ghost" href="#" onclick="showPage('cases');return false;">Ver portfólio</a>
+      </div>
+    </div>
+    <div class="sobre-visual reveal-up" style="transition-delay:.2s">
+      <div class="sobre-orb"></div>
+      <div class="sobre-avatar">👨‍💻</div>
+      <div class="sobre-orbit-tag t1">Full Stack Dev</div>
+      <div class="sobre-orbit-tag t2">UI/UX Designer</div>
+      <div class="sobre-orbit-tag t3">Arthur Miyazaki</div>
+    </div>
+  </section>
+
+  <div style="padding:0 5% 100px;">
+    <div class="section-eyebrow reveal-up">Nossos valores</div>
+    <div class="sobre-values reveal-up">
+      <div class="val-item">
+        <div class="val-num">01</div>
+        <h3>Profissionalismo</h3>
+        <p>Alto padrão em cada entrega. Comunicação clara, prazos respeitados e resultado que supera expectativas.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">02</div>
+        <h3>Personalização</h3>
+        <p>Cada proposta é elaborada para o negócio específico do cliente. Sem templates genéricos.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">03</div>
+        <h3>Foco em Resultado</h3>
+        <p>Não fazemos sites bonitos por fazer. Cada decisão de design visa gerar mais clientes para o seu negócio.</p>
+      </div>
+      <div class="val-item">
+        <div class="val-num">04</div>
+        <h3>Transparência</h3>
+        <p>Sem custos ocultos, sem surpresas. Você sabe exatamente o que está contratando e quando vai receber.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ CASES ════════════ -->
+<div id="page-cases" class="page" style="padding:160px 5% 100px;position:relative;z-index:2;">
+  <div class="section-eyebrow reveal-up">Portfólio completo</div>
+  <h1 class="reveal-up" style="font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,8vw,8rem);line-height:.88;color:#fff;margin-bottom:1.5rem;">
+    NOSSOS<br><span style="color:var(--accent)">TRABALHOS</span>
+  </h1>
+  <p class="reveal-up" style="color:var(--text-muted);font-size:1rem;line-height:1.8;max-width:500px;margin-bottom:60px;">Sites que transformaram negócios reais em marcas digitais profissionais.</p>
+
+  <div class="cases-grid reveal-up" style="margin-bottom:60px;">
+    <div class="case-card feat">
+      <div class="case-card-inner">
+        <div class="case-mock">
+          <div class="case-site-preview">
+            <div class="site-topbar">
+              <div class="site-dot" style="background:#ff5f56"></div>
+              <div class="site-dot" style="background:#ffbd2e"></div>
+              <div class="site-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="site-content">
+              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.1),transparent)">
+                <div class="site-hero-mock-title" style="background:rgba(200,255,0,.35)"></div>
+              </div>
+              <div class="site-rows">
+                <div class="site-row"></div>
+                <div class="site-row accent-row"></div>
+                <div class="site-row" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-overlay">
+        <div class="case-cat">Gastronomia · Destaque</div>
+        <div class="case-title">Restaurante Bella Vita</div>
+        <div class="case-tag-row">
+          <span class="case-tag">Site Completo</span>
+          <span class="case-tag">Sistema de Reservas</span>
+          <span class="case-tag">+180% visitas orgânicas</span>
+        </div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-card-inner">
+        <div class="case-mock">
+          <div class="case-site-preview">
+            <div class="site-topbar">
+              <div class="site-dot" style="background:#ff5f56"></div>
+              <div class="site-dot" style="background:#ffbd2e"></div>
+              <div class="site-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="site-content">
+              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(0,245,255,.08),transparent)">
+                <div class="site-hero-mock-title" style="background:rgba(0,245,255,.35)"></div>
+              </div>
+              <div class="site-rows">
+                <div class="site-row"></div>
+                <div class="site-row" style="background:rgba(0,245,255,.15);width:75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-overlay">
+        <div class="case-cat">Saúde & Beleza</div>
+        <div class="case-title">Studio Orquídea</div>
+        <div class="case-tag-row"><span class="case-tag">Portfólio + Agenda</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-card-inner">
+        <div class="case-mock">
+          <div class="case-site-preview">
+            <div class="site-topbar">
+              <div class="site-dot" style="background:#ff5f56"></div>
+              <div class="site-dot" style="background:#ffbd2e"></div>
+              <div class="site-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="site-content">
+              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(255,60,172,.08),transparent)">
+                <div class="site-hero-mock-title" style="background:rgba(255,60,172,.35)"></div>
+              </div>
+              <div class="site-rows">
+                <div class="site-row"></div>
+                <div class="site-row" style="background:rgba(255,60,172,.15);width:65%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-overlay">
+        <div class="case-cat">Moda & Varejo</div>
+        <div class="case-title">Boutique Fleur</div>
+        <div class="case-tag-row"><span class="case-tag">E-commerce</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-card-inner">
+        <div class="case-mock">
+          <div class="case-site-preview">
+            <div class="site-topbar">
+              <div class="site-dot" style="background:#ff5f56"></div>
+              <div class="site-dot" style="background:#ffbd2e"></div>
+              <div class="site-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="site-content">
+              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.06),transparent)">
+                <div class="site-hero-mock-title" style="background:rgba(200,255,0,.25)"></div>
+              </div>
+              <div class="site-rows">
+                <div class="site-row"></div>
+                <div class="site-row accent-row" style="width:55%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-overlay">
+        <div class="case-cat">Construção Civil</div>
+        <div class="case-title">Construtora Álvarez</div>
+        <div class="case-tag-row"><span class="case-tag">Institucional</span></div>
+      </div>
+    </div>
+    <div class="case-card">
+      <div class="case-card-inner">
+        <div class="case-mock">
+          <div class="case-site-preview">
+            <div class="site-topbar">
+              <div class="site-dot" style="background:#ff5f56"></div>
+              <div class="site-dot" style="background:#ffbd2e"></div>
+              <div class="site-dot" style="background:#27c93f"></div>
+            </div>
+            <div class="site-content">
+              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(100,200,255,.06),transparent)">
+                <div class="site-hero-mock-title" style="background:rgba(100,200,255,.3)"></div>
+              </div>
+              <div class="site-rows">
+                <div class="site-row" style="background:rgba(100,200,255,.1)"></div>
+                <div class="site-row" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="case-overlay">
+        <div class="case-cat">Advocacia</div>
+        <div class="case-title">Escritório Leal & Associados</div>
+        <div class="case-tag-row"><span class="case-tag">Site Profissional</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;" class="reveal-up">
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;">Quer ver seu negócio aqui?</p>
+    <a class="btn-prim" href="#" onclick="showPage('contato');return false;">
+      Solicitar orçamento grátis
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ════════════ CONTATO ════════════ -->
+<div id="page-contato" class="page" style="position:relative;z-index:2;">
+  <section style="padding:160px 5% 100px;">
+    <div class="contact-layout">
+      <div class="contact-left reveal-up">
+        <div class="section-eyebrow">Fale conosco</div>
+        <h1>Vamos criar<br>seu site <em>juntos</em></h1>
+        <p>Preencha o formulário ou entre em contato diretamente. Respondemos em até 24 horas.</p>
+        <div class="contact-methods">
+  <a class="cmethod" href="#" onclick="showToast('Use o formulário ao lado para contato mais rápido!', true); return false;">
+            <div class="cmethod-icon"><img src="img/envelope-at.svg" alt="E-mail"></div>
+            <div class="cmethod-info">
+              <label>E-mail</label>
+              <span>blackvoidev@gmail.com</span>
+            </div>
+          </a>
+          <a class="cmethod" href="https://wa.me/16725592467" target="_blank">
+            <div class="cmethod-icon"><img src="img/whatsapp.svg" alt="WhatsApp"></div>
+            <div class="cmethod-info">
+              <label>WhatsApp</label>
+              <span>Resposta rápida via WhatsApp</span>
+            </div>
+          </a>
+          <a class="cmethod" href="https://www.instagram.com/blackvoid.dev/" target="_blank">
+            <div class="cmethod-icon"><img src="img/instagram.svg" alt="instagram"></div>
+            <div class="cmethod-info">
+              <label>Instagram</label>
+              <span>@blackvoid.dev</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal-up" style="transition-delay:.2s">
+        <h3>Solicite seu orçamento</h3>
+
+<form id="contactForm">
+
+          <!-- Configurações invisíveis -->
+          <input type="hidden" name="_subject" value="Novo orçamento recebido!">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+
+          <div class="form-grid">
+            
+            <div class="fgroup">
+              <label>Seu nome *</label>
+              <input type="text" name="Nome" placeholder="João Silva" required>
+            </div>
+
+            <div class="fgroup">
+              <label>Nome da empresa</label>
+              <input type="text" name="Empresa" placeholder="Empresa LTDA">
+            </div>
+
+            <div class="fgroup">
+              <label>E-mail *</label>
+              <input type="email" name="Email" placeholder="joao@empresa.com" required>
+            </div>
+
+            <div class="fgroup">
+              <label>WhatsApp</label>
+              <input type="tel" name="WhatsApp" placeholder="(11) 99999-9999">
+            </div>
+
+            <div class="fgroup full">
+              <label>Tipo de negócio</label>
+              <select name="Tipo de Negócio">
+                <option value="">Selecione...</option>
+                <option>Restaurante / Bar</option>
+                <option>Salão / Studio</option>
+                <option>Loja / Varejo</option>
+                <option>Serviços Profissionais</option>
+                <option>Saúde / Clínica</option>
+                <option>Educação</option>
+                <option>Outro</option>
+              </select>
+            </div>
+
+            <div class="fgroup full">
+              <label>Conte sobre seu projeto</label>
+              <textarea name="Projeto" placeholder="O que você precisa? Já tem alguma referência de site que gosta?"></textarea>
+            </div>
+
+          </div>
+
+          <div class="form-submit">
+            <button id="submitBtn" class="btn-prim" type="submit">
+              Enviar
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <span class="form-note">Respondemos em até 24h.</span>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo-name" style="font-family:'Bebas Neue';font-size:1.8rem;letter-spacing:.15em;color:#fff;">
+        BLACK <span style="color:var(--accent)">VOID</span>
+        <span style="font-size:.6rem;font-weight:500;letter-spacing:.18em;display:block;color:var(--text-muted);font-family:'Outfit';margin-top:-.2rem;">STUDIO</span>
+      </div>
+      <p>Transformamos pequenas empresas em marcas digitais profissionais. Sites modernos, responsivos e que geram resultado.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.instagram.com/blackvoid.dev/" target="_blank">✦</a>
+        <a class="social-link" href="https://wa.me/5511999999999" target="_blank">💬</a>
+        <a class="social-link" href="mailto:blackvoidev@gmail.com">@</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+        <li><a href="#" onclick="showPage('servicos');return false;">Serviços</a></li>
+        <li><a href="#" onclick="showPage('cases');return false;">Portfólio</a></li>
+        <li><a href="#" onclick="showPage('sobre');return false;">Sobre</a></li>
+        <li><a href="#" onclick="showPage('contato');return false;">Contato</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#">Site Institucional</a></li>
+        <li><a href="#">Landing Page</a></li>
+        <li><a href="#">E-commerce</a></li>
+        <li><a href="#">Domínio & Hospedagem</a></li>
+        <li><a href="#">SEO Básico</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="mailto:blackvoidev@gmail.com">blackvoidev@gmail.com</a></li>
+        <li><a href="https://wa.me/5511999999999" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/blackvoid.dev" target="_blank">@blackvoid.dev</a></li>
+        <li><a href="#">São Paulo, SP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Black Void Studio. Todos os direitos reservados.</p>
+    <div class="footer-badge">Online & Operacional</div>
+  </div>
+</footer>
+
+<!-- ════════════ ASSISTANT ════════════ -->
+<button id="assistant-btn" onclick="toggleAssistant()">
+  <span style="font-size:1.3rem;">✦</span>
+  <div class="assist-notif"></div>
+</button>
+
+<div id="assistant-panel">
+  <div class="assist-header">
+    <div class="assist-av">V</div>
+    <div class="assist-info">
+      <h4>Void Assistant</h4>
+      <p>● Online agora</p>
+    </div>
+    <button class="assist-close" onclick="toggleAssistant()">✕</button>
+  </div>
+  <div id="assistMsgs"></div>
+  <div id="assistSugs">
+    <button class="sug-btn" onclick="sendSuggestion(this)">💰 Quanto custa?</button>
+    <button class="sug-btn" onclick="sendSuggestion(this)">⏱ Prazo de entrega?</button>
+    <button class="sug-btn" onclick="sendSuggestion(this)">📦 O que está incluso?</button>
+  </div>
+  <div class="assist-input-row">
+    <input id="assistInput" type="text" placeholder="Pergunte sobre nossos serviços..." onkeydown="if(event.key==='Enter')sendMessage()"/>
+    <button id="assistSend" onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+   JAVASCRIPT
+════════════════════════════════════ -->
+<link rel="stylesheet" href="agent/styles.css"/>
+<!-- API Config (carrega chave de forma segura) -->
+<script src="api-config.js"></script>
+<script src="main.js"></script>
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <script>
+      (function(){
+        emailjs.init("M30bjVb-4rIURj_ya");
+      })();
+
+      document.querySelector("#contactForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const btn = document.querySelector("#submitBtn");
+        btn.innerText = "Enviando...";
+        btn.disabled = true;
+
+        emailjs.send("service_4vyudkh", "template_6h56ei2", {
+          nome: document.querySelector('input[name="Nome"]').value,
+          empresa: document.querySelector('input[name="Empresa"]').value,
+          email: document.querySelector('input[name="Email"]').value,
+          whatsapp: document.querySelector('input[name="WhatsApp"]').value,
+          tipo: document.querySelector('select[name="Tipo de Negócio"]').value,
+          projeto: document.querySelector('textarea[name="Projeto"]').value
+        })
+        .then(function() {
+          btn.innerText = "Mensagem enviada ✅";
+          document.querySelector("#contactForm").reset();
+          btn.disabled = false;
+        })
+        .catch(function(error) {
+          btn.innerText = "Erro ao enviar ❌";
+          btn.disabled = false;
+          console.error("Erro:", error);
+        });
+      });
+    </script>
+
+    <script src="agent/integration.js"></script>
+
+</body>
+</html>
+
+
