@@ -75,7 +75,12 @@ document.querySelectorAll('.stats-strip').forEach(el=>cntObs.observe(el));
 
 /* ── MOBILE MENU ── */
 function toggleMenu(){
-  // simple toggle for mobile — could expand if needed
+  const mobileNav = document.getElementById('navMobile');
+  const backdrop = document.getElementById('navBackdrop');
+  if (!mobileNav || !backdrop) return;
+  const isOpen = mobileNav.classList.contains('open');
+  mobileNav.classList.toggle('open', !isOpen);
+  backdrop.classList.toggle('open', !isOpen);
 }
 
 /* ── FORM SUBMIT ── */

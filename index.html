@@ -63,6 +63,18 @@
     <span></span><span></span><span></span>
   </div>
 </header>
+<div class="nav-backdrop" id="navBackdrop" onclick="toggleMenu()"></div>
+<nav class="nav-mobile" id="navMobile">
+  <div class="nav-mobile-header">
+    <div class="logo-name">BLACK <span>VOID</span></div>
+    <button class="nav-close" onclick="toggleMenu()">✕</button>
+  </div>
+  <button class="nav-btn" onclick="showPage('home');toggleMenu();">Home</button>
+  <button class="nav-btn" onclick="showPage('servicos');toggleMenu();">Serviços</button>
+  <button class="nav-btn" onclick="showPage('cases');toggleMenu();">Portfolio</button>
+  <button class="nav-btn" onclick="showPage('sobre');toggleMenu();">Sobre</button>
+  <a class="nav-cta" href="#" onclick="showPage('contato');toggleMenu();return false;">Solicitar Orçamento</a>
+</nav>
 
 <!-- ════════════ HOME ════════════ -->
 <div id="page-home" class="page active">
@@ -94,53 +106,10 @@
 
     <div class="hero-right">
       <div class="hero-card-stack">
-        <div class="hcard hcard-back2">
-          <div class="hcard-img">
-            <div class="hcard-mockup">
-              <div class="hcard-mock-bar">
-                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
-                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
-                <div class="hcard-mock-dot" style="background:#27c93f"></div>
-              </div>
-              <div class="hcard-mock-lines">
-                <div class="hcard-mock-line accent" style="width:70%"></div>
-                <div class="hcard-mock-line"></div>
-                <div class="hcard-mock-line short"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="hcard hcard-back1">
-          <div class="hcard-img">
-            <div class="hcard-mockup">
-              <div class="hcard-mock-bar">
-                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
-                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
-                <div class="hcard-mock-dot" style="background:#27c93f"></div>
-              </div>
-              <div class="hcard-mock-lines">
-                <div class="hcard-mock-line accent" style="width:55%"></div>
-                <div class="hcard-mock-line med"></div>
-                <div class="hcard-mock-line tiny"></div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="hcard hcard-main">
           <div class="hcard-img">
             <div class="hcard-mockup">
-              <div class="hcard-mock-bar">
-                <div class="hcard-mock-dot" style="background:#ff5f56"></div>
-                <div class="hcard-mock-dot" style="background:#ffbd2e"></div>
-                <div class="hcard-mock-dot" style="background:#27c93f"></div>
-              </div>
-              <div class="hcard-mock-lines">
-                <div class="hcard-mock-line accent"></div>
-                <div class="hcard-mock-line"></div>
-                <div class="hcard-mock-line med"></div>
-                <div class="hcard-mock-line short"></div>
-                <div class="hcard-mock-line accent" style="width:50%"></div>
-              </div>
+              <img class="hcard-project-img" src="img/site_restaurante_bella_vita.png" alt="Restaurante Bella Vita">
             </div>
           </div>
           <div class="hcard-body">
@@ -624,25 +593,7 @@
   <div class="cases-grid reveal-up" style="margin-bottom:60px;">
     <div class="case-card feat">
       <div class="case-card-inner">
-        <div class="case-mock">
-          <div class="case-site-preview">
-            <div class="site-topbar">
-              <div class="site-dot" style="background:#ff5f56"></div>
-              <div class="site-dot" style="background:#ffbd2e"></div>
-              <div class="site-dot" style="background:#27c93f"></div>
-            </div>
-            <div class="site-content">
-              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.1),transparent)">
-                <div class="site-hero-mock-title" style="background:rgba(200,255,0,.35)"></div>
-              </div>
-              <div class="site-rows">
-                <div class="site-row"></div>
-                <div class="site-row accent-row"></div>
-                <div class="site-row" style="width:70%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img class="case-image" src="img/site_restaurante_bella_vita.png" alt="Restaurante Bella Vita">
       </div>
       <div class="case-overlay">
         <div class="case-cat">Gastronomia · Destaque</div>
@@ -656,24 +607,7 @@
     </div>
     <div class="case-card">
       <div class="case-card-inner">
-        <div class="case-mock">
-          <div class="case-site-preview">
-            <div class="site-topbar">
-              <div class="site-dot" style="background:#ff5f56"></div>
-              <div class="site-dot" style="background:#ffbd2e"></div>
-              <div class="site-dot" style="background:#27c93f"></div>
-            </div>
-            <div class="site-content">
-              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(0,245,255,.08),transparent)">
-                <div class="site-hero-mock-title" style="background:rgba(0,245,255,.35)"></div>
-              </div>
-              <div class="site-rows">
-                <div class="site-row"></div>
-                <div class="site-row" style="background:rgba(0,245,255,.15);width:75%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img class="case-image" src="img/site_studio_orquidea.png" alt="Studio Orquídea">
       </div>
       <div class="case-overlay">
         <div class="case-cat">Saúde & Beleza</div>
@@ -683,24 +617,7 @@
     </div>
     <div class="case-card">
       <div class="case-card-inner">
-        <div class="case-mock">
-          <div class="case-site-preview">
-            <div class="site-topbar">
-              <div class="site-dot" style="background:#ff5f56"></div>
-              <div class="site-dot" style="background:#ffbd2e"></div>
-              <div class="site-dot" style="background:#27c93f"></div>
-            </div>
-            <div class="site-content">
-              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(255,60,172,.08),transparent)">
-                <div class="site-hero-mock-title" style="background:rgba(255,60,172,.35)"></div>
-              </div>
-              <div class="site-rows">
-                <div class="site-row"></div>
-                <div class="site-row" style="background:rgba(255,60,172,.15);width:65%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img class="case-image" src="img/site_boutique_fleur.png" alt="Boutique Fleur">
       </div>
       <div class="case-overlay">
         <div class="case-cat">Moda & Varejo</div>
@@ -710,24 +627,7 @@
     </div>
     <div class="case-card">
       <div class="case-card-inner">
-        <div class="case-mock">
-          <div class="case-site-preview">
-            <div class="site-topbar">
-              <div class="site-dot" style="background:#ff5f56"></div>
-              <div class="site-dot" style="background:#ffbd2e"></div>
-              <div class="site-dot" style="background:#27c93f"></div>
-            </div>
-            <div class="site-content">
-              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(200,255,0,.06),transparent)">
-                <div class="site-hero-mock-title" style="background:rgba(200,255,0,.25)"></div>
-              </div>
-              <div class="site-rows">
-                <div class="site-row"></div>
-                <div class="site-row accent-row" style="width:55%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img class="case-image" src="img/site_construtora_alvarez.png" alt="Construtora Álvarez">
       </div>
       <div class="case-overlay">
         <div class="case-cat">Construção Civil</div>
@@ -737,24 +637,7 @@
     </div>
     <div class="case-card">
       <div class="case-card-inner">
-        <div class="case-mock">
-          <div class="case-site-preview">
-            <div class="site-topbar">
-              <div class="site-dot" style="background:#ff5f56"></div>
-              <div class="site-dot" style="background:#ffbd2e"></div>
-              <div class="site-dot" style="background:#27c93f"></div>
-            </div>
-            <div class="site-content">
-              <div class="site-hero-mock" style="background:linear-gradient(90deg,rgba(100,200,255,.06),transparent)">
-                <div class="site-hero-mock-title" style="background:rgba(100,200,255,.3)"></div>
-              </div>
-              <div class="site-rows">
-                <div class="site-row" style="background:rgba(100,200,255,.1)"></div>
-                <div class="site-row" style="width:70%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img class="case-image" src="img/site_leal_associados.png" alt="Escritório Leal & Associados">
       </div>
       <div class="case-overlay">
         <div class="case-cat">Advocacia</div>
