@@ -768,22 +768,28 @@ header.scrolled{
 .cases-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--border2);
-  border:1px solid var(--border2);
+  gap:1rem;
+  background:transparent;
+  border:none;
 }
 .case-card{
-  background:var(--bg2);
-  aspect-ratio:3/2;position:relative;overflow:hidden;
-  cursor:none;
-}
-.case-card-inner{
-  width:100%;height:100%;
-  background:#000;
+  background:#080c12;
+  aspect-ratio:16/11;
   position:relative;
   overflow:hidden;
+  border-radius:24px;
+  cursor:none;
+}
+.case-card.feat{grid-column:span 2;aspect-ratio:16/9;}
+.case-card-inner{
+  width:100%;height:100%;
+  background:transparent;
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
   transition:transform .7s cubic-bezier(.16,1,.3,1);
 }
-.case-card:hover .case-card-inner{transform:scale(1.06);}
+.case-card:hover .case-card-inner{transform:scale(1.03);}
 .case-mock{
   position:absolute;inset:0;
   display:flex;align-items:center;justify-content:center;
@@ -800,7 +806,8 @@ header.scrolled{
   transform:translateY(-6px);
   box-shadow:0 30px 80px rgba(0,0,0,.8);
 }
-.case-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.case-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.case-overlay{border-radius:24px;}
 .site-topbar{
   height:20px;background:var(--surface);
   display:flex;align-items:center;padding:0 8px;gap:4px;
