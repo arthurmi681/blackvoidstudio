@@ -27,9 +27,14 @@ function showPage(id){
 
 /* ── HEADER SCROLL ── */
 const header=document.getElementById('mainHeader');
+const btt=document.getElementById('backToTop');
 window.addEventListener('scroll',()=>{
   if(window.scrollY>60)header.classList.add('scrolled');
   else header.classList.remove('scrolled');
+  
+  if(window.scrollY>500) btt.classList.add('show');
+  else btt.classList.remove('show');
+
   // scroll progress
   const active=document.querySelector('.page.active');
   if(active){
@@ -112,6 +117,13 @@ function showToast(msg,accent=false){
   },3000);
 }
 
+function copyEmail(e, email) {
+  e.preventDefault();
+  navigator.clipboard.writeText(email).then(() => {
+    showToast('E-mail copiado!', true);
+  });
+}
+
 /* ── LOADER ── */
 (function(){
   const bar=document.getElementById('loaderBar');
@@ -153,18 +165,20 @@ function showToast(msg,accent=false){
 })();
 
 /* ── VOID ASSISTANT ── */
-const SYSTEM=`Você é o Void Assistant, assistente virtual da Black Void Studio — agência de criação de sites para pequenas e médias empresas em São Paulo. Responda sempre em português, seja direto, caloroso e profissional.
+const SYSTEM=`Você é o Void Assistant, a inteligência central da Black Void Studio — uma empresa de engenharia de software de elite em São Paulo especializada em IA, SaaS, Sistemas Web, Cibersegurança e Infraestrutura Cloud.
 
-Sobre a Black Void Studio (Arthur Miyazaki):
-- Especialidade: criação de sites profissionais para pequenos negócios
-- Pacote principal: Site Essencial Pro por R$ 1.497 (de R$ 2.500)
-- Inclui: site com 5+ páginas, design responsivo, domínio (1 ano), hospedagem (1 ano), SSL, SEO básico, formulário de contato, integração redes sociais, 3 meses suporte
-- Prazo: até 14 dias
-- Pagamento: R$ 750 entrada + R$ 747 na entrega
+Diretrizes de resposta:
+- Tom: Futurista, minimalista, autoritário, mas caloroso e profissional.
+- Missão: Comunicar que a Black Void resolve problemas tecnológicos complexos com soluções de ponta.
+- Escopo: 
+  1. IA: Agentes autônomos, integrações de LLM, automações.
+  2. Software: SaaS escaláveis, ERP/CRM customizados, Aplicações Web de alta performance.
+  3. Security & Infra: Auditorias de segurança (Pentest), Cloud (AWS), DevOps.
+- Projetos em destaque: KIRA AI (Auto-Agent System) e JARVIS (Automação Corporativa).
 - Contato: blackvoidev@gmail.com | @blackvoid.dev
-- Atende: restaurantes, salões, lojas, profissionais liberais, clínicas, escritórios
+- Chamada para ação: Incentive sempre o agendamento de um diagnóstico técnico ou solicitação de orçamento.
 
-Seja conciso (máx 2-3 parágrafos). Incentive o cliente a solicitar um orçamento.`;
+Seja direto e conciso (máx 2-3 parágrafos).`;
 
 let chatHistory=[];
 let assistantOpen=false;
@@ -235,6 +249,22 @@ function sendSuggestion(btn){
   document.getElementById('assistInput').value=btn.textContent.replace(/^.\s/,'');
   sendMessage();
 }
+
+/* ── SMOOTH SCROLL FOR ALL LINKS ── */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
 
 /* ── PARTICLES ── */
 particlesJS('particles-js',{
