@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio — Black Void</title>
+  <meta name="description" content="Projetos e trabalhos da Black Void." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 48px
+    }
+
+    .filter-row button {
+      margin-top: 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      border: 1px solid var(--line-2);
+      padding: 9px 16px;
+      color: var(--fg-dim);
+      transition: .25s
+    }
+
+    .filter-row button.active,
+    .filter-row button:hover {
+      border-color: var(--void-red);
+      color: var(--fg)
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line)
+    }
+
+    .proj-card {
+      background: var(--bg);
+      padding: 32px;
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between
+    }
+
+    .proj-card .ph {
+      aspect-ratio: 16/10;
+      border: 1px dashed var(--line-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-2);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-bottom: 20px;
+      letter-spacing: .06em
+    }
+
+    @media (max-width:900px) {
+      .proj-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media (max-width:560px) {
+      .proj-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader"><img class="ldr-mark" src="assets/img/logo.png" alt="" />
+    <div class="ldr-word">BLACK VOID</div>
+    <div class="ldr-bar"><i></i></div>
+  </div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <canvas class="void-canvas"></canvas>
+
+  <nav>
+    <a href="../index.html" class="brand"><img src="assets/img/logo.png"
+        alt="Black Void" /><span>BLACK<i>VOID</i></span></a>
+    <div class="nav-links">
+      <a href="ecossistema.html">Ecossistema</a>
+      <a href="kira.html">Kira AI</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="portfolio.html" class="active">Portfólio</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html" class="nav-cta" style="font-family:var(--font-display)">Contato →</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <main>
+    <section class="page-hero" style="padding-bottom:60px">
+      <div class="wrap">
+        <div class="crumb reveal">HOME <i>/</i> PORTFÓLIO</div>
+        <span class="eyebrow reveal">Trabalhos</span>
+        <h1 class="h-xl reveal" style="margin-top:22px">O que já<br />foi <i
+            style="font-style:normal;color:var(--void-red)">construído.</i></h1>
+        <p class="lead reveal" style="margin-top:22px;max-width:640px">Estas são as categorias reservadas para os cases
+          da Black Void. Me manda os projetos — nome, descrição, prints ou link — que eu populo cada card com o case
+          completo (problema → solução → resultado → tecnologias).</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="filter-row reveal">
+          <button class="active">Todos</button><button>Black
+            Void</button><button>Kira</button><button>Branding</button><button>Landing
+            Pages</button><button>Sistemas</button><button>IA</button><button>APIs</button><button>Bots</button><button>Dashboards</button>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card reveal" style="--i:0">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Site Institucional</span>
+              <h3>Black Void — Site</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">O próprio site da Black Void. Aguardando conteúdo do case.
+            </p>
+          </div>
+          <div class="proj-card reveal" style="--i:1">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Produto</span>
+              <h3>Kira AI</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">Plataforma de IA multiagente. Aguardando conteúdo do case.
+            </p>
+          </div>
+          <div class="proj-card reveal" style="--i:2">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Branding</span>
+              <h3>Identidade visual</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">Reservado para projeto de branding.</p>
+          </div>
+          <div class="proj-card reveal" style="--i:3">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Landing Page</span>
+              <h3>Landing page</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">Reservado para landing page de cliente.</p>
+          </div>
+          <div class="proj-card reveal" style="--i:4">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Sistema</span>
+              <h3>Sistema web</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">Reservado para sistema/dashboard de cliente.</p>
+          </div>
+          <div class="proj-card reveal" style="--i:5">
+            <div>
+              <div class="ph">IMAGEM DO PROJETO</div><span class="tag">Bot</span>
+              <h3>Bot / Automação</h3>
+            </div>
+            <p style="color:var(--muted);font-size:13.5px">Reservado para automação ou bot entregue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-block" style="border-top:1px solid var(--line)">
+      <div class="wrap">
+        <h2 style="margin-bottom: 30px; font-size:clamp(30px,4.5vw,58px)">Quer ser o próximo<br />case da <span
+            style="color: #E02920;"> Black Void? </span></h2>
+        <a href="contato.html" class="btn">Iniciar um projeto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">BLACK<i>VOID</i></div>
+          <p class="footer-tag">Tecnologia, inteligência artificial e infraestrutura para empresas que querem operar no
+            futuro.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Ecossistema</h5><a href="kira.html">Kira AI</a><a href="ecossistema.html">Módulos</a><a
+            href="portfolio.html">Portfólio</a><a href="planos.html">Planos</a>
+        </div>
+        <div class="footer-col">
+          <h5>Empresa</h5><a href="sobre.html">Sobre</a><a href="carreira.html">Carreira</a><a
+            href="blog.html">Blog</a><a href="documentacao.html">Documentação</a>
+        </div>
+        <div class="footer-col">
+          <h5>Contato</h5><a href="contato.html">Fale conosco</a><a
+            href="mailto:contato@blackvoid.com.br">contato@blackvoid.com.br</a><a href="#">LinkedIn</a><a
+            href="#">Instagram</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2026 Black Void. Dourados, MS — Brasil.</span><span>Todos os sistemas
+          operacionais</span></div>
+    </div>
+  </footer>
+
+  <script src="../agent/kira.js"></script>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.filter-row button').forEach(b => {
+      b.addEventListener('click', () => {
+        document.querySelectorAll('.filter-row button').forEach(x => x.classList.remove('active'));
+        b.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

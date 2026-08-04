@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Black Void Studio — 404</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  #void-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+  }
+
+  main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .glitch-404 {
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: clamp(6rem, 20vw, 10rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    opacity: 0;
+  }
+
+  .glitch-404::before,
+  .glitch-404::after {
+    content: '404';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    overflow: hidden;
+  }
+
+  .glitch-404 {
+    --gx-before: 0;
+    --gy-before: 0;
+    --gx-after: 0;
+    --gy-after: 0;
+  }
+
+  .glitch-404::before {
+    left: 2px;
+    color: #8c1710;
+    clip-path: inset(0 0 60% 0);
+    transform: translate(calc(var(--gx-before) * 1px), calc(var(--gy-before) * 1px));
+  }
+
+  .glitch-404::after {
+    left: -2px;
+    color: #ffffff;
+    clip-path: inset(60% 0 0 0);
+    transform: translate(calc(var(--gx-after) * 1px), calc(var(--gy-after) * 1px));
+  }
+
+  #copy {
+    margin-top: 16px;
+    opacity: 0;
+  }
+
+  #copy p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: clamp(1rem, 2vw, 1.125rem);
+  }
+
+  #home-link {
+    display: inline-block;
+    margin-top: 32px;
+    border: 1px solid #8c1710;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+
+  #home-link:hover { background: #8c1710; }
+</style>
+</head>
+<body>
+
+<canvas id="void-canvas"></canvas>
+
+<main>
+  <h1 class="glitch-404" data-text="404" id="number">404</h1>
+  <div id="copy">
+    <p>Essa página não existe — ou foi movida pro void.</p>
+    <a href="/" id="home-link">Voltar ao início</a>
+  </div>
+</main>
+
+<!-- Só o void-grid aqui, sem o núcleo de glow — a 404 precisa carregar rápido,
+     não competir por atenção com o resto da cena. -->
+<script type="importmap">
+  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script type="module">
+  import * as THREE from 'three';
+
+  const voidGridVertex = /* glsl */ `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+
+  const voidGridFragment = /* glsl */ `
+    uniform float uTime;
+    uniform vec3 uBaseColor;
+    uniform vec3 uGridColor;
+    varying vec2 vUv;
+
+    float grid(vec2 uv, float cellSize) {
+      vec2 g = abs(fract(uv * cellSize - 0.5) - 0.5) / fwidth(uv * cellSize);
+      float line = min(g.x, g.y);
+      return 1.0 - min(line, 1.0);
+    }
+
+    void main() {
+      vec2 uv = vUv;
+      float wobble = sin(uv.x * 8.0 + uTime * 0.15) * 0.002;
+      vec2 gridUv = uv + vec2(wobble, wobble * 0.5);
+      float g = grid(gridUv, 24.0);
+      float distFromCenter = length(uv - 0.5) * 1.4;
+      float radialFade = 1.0 - smoothstep(0.0, 1.0, distFromCenter);
+      vec3 color = mix(uBaseColor, uGridColor, g * radialFade * 0.5);
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `;
+
+  const canvas = document.getElementById('void-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 5);
+
+  const gridMaterial = new THREE.ShaderMaterial({
+    vertexShader: voidGridVertex,
+    fragmentShader: voidGridFragment,
+    uniforms: {
+      uTime: { value: 0 },
+      uBaseColor: { value: new THREE.Color('#050505') },
+      uGridColor: { value: new THREE.Color('#2a2a2a') },
+    },
+  });
+  const gridPlane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), gridMaterial);
+  gridPlane.position.set(0, 0, -2);
+  gridPlane.scale.set(20, 12, 1);
+  scene.add(gridPlane);
+
+  const clock = new THREE.Clock();
+  function animate() {
+    gridMaterial.uniforms.uTime.value = clock.getElapsedTime();
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  if (!renderer.getContext()) {
+    canvas.style.display = 'none';
+    document.body.style.background = '#050505';
+  }
+
+  // Entrada (GSAP, easing custom)
+  const entranceTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  entranceTl
+    .fromTo('#number', { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 1 })
+    .fromTo('#copy', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.8 }, '-=0.5');
+
+  // Glitch em burst, contínuo pra sempre — dispara depois da entrada e nunca para.
+  // Cada ciclo: um burst rápido de distorção (cor separada nas fatias de cima/baixo do
+  // número) seguido de uma pausa, pra parecer sinal instável em vez de ruído constante.
+  const numberEl = document.getElementById('number');
+
+  function burstTick() {
+    gsap.timeline({ defaults: { ease: 'steps(1)' } })
+      .to(numberEl, { '--gx-before': -6, '--gy-before': -2, skewX: 6, duration: 0.04 })
+      .to(numberEl, { '--gx-after': 5, '--gy-after': 2, duration: 0.04 }, '<')
+      .to(numberEl, { '--gx-before': 4, '--gy-before': 1, skewX: -4, duration: 0.04 })
+      .to(numberEl, { '--gx-after': -3, '--gy-after': -1, duration: 0.04 }, '<')
+      .to(numberEl, { '--gx-before': 0, '--gy-before': 0, '--gx-after': 0, '--gy-after': 0, skewX: 0, duration: 0.05 });
+  }
+
+  gsap.delayedCall(1.2, function loopGlitch() {
+    burstTick();
+    gsap.delayedCall(gsap.utils.random(2, 4), loopGlitch); // intervalo levemente aleatório — nunca mecânico
+  });
+</script>
+
+</body>
+</html>

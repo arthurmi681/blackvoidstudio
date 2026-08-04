@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planos — Black Void</title>
+  <meta name="description" content="Planos e investimento para projetos Black Void." />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .tag2 {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      color: var(--void-red);
+      text-transform: uppercase
+    }
+
+    .etc {
+      font-size: 18px;
+      color: var(--fg-dim);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 10px;
+      color: var(--void-red);
+    }
+
+    .btnv2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: .05em;
+      padding: 15px 26px;
+      border: 1px solid var(--void-red);
+      color: var(#fff);
+      background: var(--void-red);
+      transition: all .3s var(--ease-soft);
+    }
+
+    .btnv2:hover {
+      background: #fff;
+      color: var(--void-red);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line)
+    }
+
+    .plan {
+      background: var(--bg);
+      padding: 40px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .plan.mid {
+      background: #0b0b0a;
+      position: relative
+    }
+
+    .plan.mid::before {
+      content: "MAIS PEDIDO";
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: .1em;
+      background: var(--void-red);
+      color: #fff;
+      padding: 6px 12px
+    }
+
+    .plan h3 {
+      font-size: 20px;
+      margin-bottom: 6px
+    }
+
+    .plan .price {
+      font-family: var(--font-display);
+      font-size: 38px;
+      margin: 18px 0;
+      color: var(--fg)
+    }
+
+    .plan .price small {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400
+    }
+
+    .plan ul {
+      margin: 22px 0;
+      flex: 1
+    }
+
+    .plan li {
+      font-size: 13.5px;
+      color: var(--fg-dim);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 10px
+    }
+
+    .plan li::before {
+      content: "—";
+      color: var(--void-red)
+    }
+
+    @media (max-width:900px) {
+      .plans-grid {
+        grid-template-columns: 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loader"><img class="ldr-mark" src="assets/img/logo.png" alt="" />
+    <div class="ldr-word">BLACK VOID</div>
+    <div class="ldr-bar"><i></i></div>
+  </div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+  <canvas class="void-canvas"></canvas>
+
+  <div data-include="../components/menu-superior.html"></div>
+
+  <main>
+    <section class="page-hero" style="padding-bottom:60px">
+      <div class="wrap">
+        <div class="crumb reveal">HOME <i>/</i> PLANOS</div>
+        <span class="eyebrow reveal">Investimento</span>
+        <h1 class="h-xl reveal" style="margin-top:22px">Planos <i style="font-style:normal;color:var(--void-red)">sob
+            medida.</i></h1>
+        <p class="lead reveal" style="margin-top:22px;max-width:640px">Projetos desenvolvidos para escalar. Desde um
+          site institucional até plataformas completas, automações e inteligência artificial empresarial.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap">
+        <div class="plans-grid">
+          <div class="plan reveal">
+            <span class="tag">Starter</span>
+            <h3>Projeto único</h3>
+            <div class="price">A partir de <br> <span style="color: var(--void-red);">R$ 2.490</span> <small>/
+                projeto</small></div>
+            <a href="Starter.html" class="btnv2">Ver detalhes</a>
+            <ul>
+              <li>✔ Até 5 páginas</li>
+              <li> ✔ Formulário</li>
+              <li>✔ WhatsApp</li>
+              <li> ✔ SEO</li>
+              <li>✔ Hospedagem</li>
+              <li>✔ SSL</li>
+              <li>✔ Deploy</li>
+              <li>✔ Painel administrativo</li>
+              <li>✔ Responsivo</li>
+              <li>✔ 30 dias de suporte</li>
+            </ul>
+            <a href="contato.html" class="btn ghost">Solicitar proposta</a>
+          </div>
+          <div class="plan mid reveal">
+            <span class="tag">Growth</span>
+            <h3>Ecossistema em operação</h3>
+            <div class="price">A partir de <br><span style="color: var(--void-red);">R$ 1.990</span.><small>/
+                  mês</small></div>
+            <button class="btnv2">Ver detalhes</button>
+            <ul>
+              <li style="color: var(--void-red);">✔ Tudo do Starter</li>
+              <li>✔ Sistema personalizado</li>
+              <li>✔ Banco de dados</li>
+              <li>✔ APIs</li>
+              <li>✔ Login</li>
+              <li>✔ Dashboard</li>
+              <li>✔ IA integrada</li>
+              <li>✔ Atualizações mensais</li>
+              <li>✔ Monitoramento</li>
+              <li>✔ Backup</li>
+              <li>✔ Infraestrutura</li>
+              <li>✔ Consultoria</li>
+            </ul>
+            <a href="contato.html" class="btn">Solicitar proposta</a>
+          </div>
+          <div class="plan reveal">
+            <span class="tag">Enterprise</span>
+            <h3>Solução personalizada</h3>
+            <div class="price">Sob consulta</div>
+            <span style="margin-bottom: 30px;color: var(--void-red);" class="tag2">Projetos de alta complexidade
+              desenvolvidos exclusivamente para grandes operações.</span>
+            <button class="btnv2">Ver detalhes</button>
+            <ul>
+              <li style="color: var(--void-red);">✔ Tudo do Growth</li>
+              <li>✔ Cluster</li>
+              <li>✔ Kubernetes</li>
+              <li> ✔ Cloud dedicada</li>
+              <li>✔ Agentes de IA</li>
+              <li> ✔ Microserviços</li>
+              <li> ✔ Alta disponibilidade</li>
+              <li> ✔ Segurança avançada</li>
+              <li>✔ SLA</li>
+              <li>✔ Time dedicado</li>
+            </ul>
+            <a href="contato.html" class="btn ghost">Falar com a equipe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div>
+        <h2 class="h-xl reveal" style="margin-top:22px">Serviços <br><i
+            style="font-style:normal;color:var(--void-red)">Sob Demanda.</i></h2>
+        <p class="lead reveal" style="margin-top:22px; margin-bottom: 30px;max-width:640px"><span
+            style="color: var(--void-red);">Precisa de uma solução específica?</span> <br> Contrate apenas o que você
+          precisa, quando precisar.
+        <h2></h2>
+        <div class="plan reveal">
+          <h2 class="price">Desenvolvimento</h2>
+          <ul>
+            <li> Landing Page</li>
+            <li> Site Institucional</li>
+            <li> Loja Virtual (E-commerce)</li>
+            <li> Dashboard Administrativo</li>
+            <li> Sistema Personalizado</li>
+            <li> Desenvolvimento de SaaS</li>
+            <li> Portal do Cliente</li>
+            <li> Área de Membros</li>
+            <li> Blog Corporativo</li>
+            <li> PWA (Aplicativo Web)</li>
+        </div>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Inteligência Artificial</h2>
+        <ul>
+          <li> Chatbot para Site</li>
+          <li> Chatbot para WhatsApp</li>
+          <li> Agente de IA Personalizado</li>
+          <li> Base de Conhecimento com IA</li>
+          <li> Integração com ChatGPT/Claude/Gemini</li>
+          <li> IA para Atendimento</li>
+          <li> IA para Análise de Documentos</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Automação</h2>
+        <ul>
+          <li> Automação de WhatsApp</li>
+          <li> Automação de E-mails</li>
+          <li> Automação de Planilhas</li>
+          <li> Integração entre Sistemas</li>
+          <li> Fluxos com n8n</li>
+          <li> Fluxos com Make</li>
+          <li> Bots para Discord</li>
+          <li> Bots para Telegram</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Infraestrutura</h2>
+        <ul>
+          <li> Configuração de VPS</li>
+          <li> Configuração de Servidor Linux</li>
+          <li> Deploy de Aplicações</li>
+          <li> Docker</li>
+          <li> Banco de Dados</li>
+          <li> Backup Automático</li>
+          <li> Configuração de Domínio</li>
+          <li> Configuração de SSL</li>
+          <li> Migração de Servidores</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Segurança</h2>
+        <ul>
+          <li> Auditoria de Segurança</li>
+          <li> Pentest</li>
+          <li> Correção de Vulnerabilidades</li>
+          <li> Hardening de Servidores</li>
+          <li> Proteção contra Ataques</li>
+          <li> Configuração de Firewall</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Manutenção</h2>
+        <ul>
+          <li> Correção de Bugs</li>
+          <li> Otimização de Performance</li>
+          <li> Atualização de Sistemas</li>
+          <li> Refatoração de Código</li>
+          <li> Manutenção Mensal</li>
+          <li> Monitoramento</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Integrações</h2>
+        <ul>
+          <li> API PIX</li>
+          <li> API Mercado Pago</li>
+          <li> API Stripe</li>
+          <li> API OpenAI</li>
+          <li> API Google</li>
+          <li> API WhatsApp Business</li>
+          <li> API Discord</li>
+          <li> API Telegram</li>
+        </ul>
+      </div>
+      <div class="plan reveal">
+        <h2 class="price">Consultoria</h2>
+        <ul>
+          <li> Consultoria em IA</li>
+          <li> Consultoria em Desenvolvimento</li>
+          <li> Arquitetura de Software</li>
+          <li> Planejamento de Projeto</li>
+          <li> CTO as a Service</li>
+        </ul>
+      </div>
+      <div style="display: flex;  align-items: center; flex-direction: column;  ">
+        <h2 class="h-xl reveal" style="font-size: 40px ;">Gostou de algum??</h2>
+        <a href="contato.html" style="margin-top: 20px; margin-bottom: 30px;" class="btn">Solicitar proposta</a>
+      </div>
+    </div>
+    </div>
+
+    <div data-include="../components/menu.html"></div>
+
+    <script src="../components/include.js"></script>
+
+    <script src="../agent/kira.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

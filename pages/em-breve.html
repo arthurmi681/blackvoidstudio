@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+  <link rel="icon" href="assets/img/logo.png" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Black Void Studio — Em Breve</title>
+
+<style>
+  @font-face {
+    font-family: 'Display';
+    src: local('Space Grotesk');
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+    background: #050505;
+    color: #ffffff;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow: hidden;
+  }
+
+  #void-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: block;
+  }
+
+  main {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 24px;
+    opacity: 0;
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', 'Display', sans-serif;
+    font-weight: 600;
+    font-size: clamp(2.75rem, 8vw, 4.5rem);
+    letter-spacing: -0.02em;
+    opacity: 0;
+  }
+
+  p.tagline {
+    margin-top: 24px;
+    max-width: 420px;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+  }
+
+  #email-form {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+  }
+
+  #email-input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  #email-input::placeholder { color: rgba(255, 255, 255, 0.4); }
+  #email-input:focus { border-color: #8c1710; }
+
+  #email-submit {
+    flex-shrink: 0;
+    background: #8c1710;
+    border: 1px solid #8c1710;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  #email-submit:hover { opacity: 0.85; }
+  #email-submit:disabled { opacity: 0.5; cursor: default; }
+
+  .status-msg {
+    margin-top: 12px;
+    font-size: 13px;
+  }
+
+  .status-msg.success { color: #8c1710; }
+  .status-msg.error { color: #8c1710; }
+</style>
+</head>
+<body>
+
+<canvas id="void-canvas"></canvas>
+
+<main>
+
+  <span class="eyebrow" id="eyebrow">Black Void Studio</span>
+  <h1 id="headline">Em breve.</h1>
+  <p class="tagline" id="tagline">
+    Estamos construindo algo novo. Deixe seu e-mail e avisamos assim que estiver no ar.
+  </p>
+
+  <form id="email-form">
+    <input type="email" id="email-input" placeholder="seu@email.com" required />
+    <button type="submit" id="email-submit">Avisar</button>
+  </form>
+  <p class="status-msg" id="status-msg"></p>
+</main>
+
+<!-- Three.js e GSAP via CDN — mesma versão pinada usada no resto do site.
+     Ajuste a versão do three abaixo se o projeto já usa outra. -->
+<script type="importmap">
+  { "imports": { "three": "https://unpkg.com/three@0.160.0/build/three.module.js" } }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script type="module">
+  import * as THREE from 'three';
+
+  // ---------- Shaders (mesma assinatura visual do site: void-grid + fresnel glow) ----------
+
+  const voidGridVertex = /* glsl */ `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `;
+
+  const voidGridFragment = /* glsl */ `
+    uniform float uTime;
+    uniform vec3 uBaseColor;
+    uniform vec3 uGridColor;
+    varying vec2 vUv;
+
+    float grid(vec2 uv, float cellSize) {
+      vec2 g = abs(fract(uv * cellSize - 0.5) - 0.5) / fwidth(uv * cellSize);
+      float line = min(g.x, g.y);
+      return 1.0 - min(line, 1.0);
+    }
+
+    void main() {
+      vec2 uv = vUv;
+      float wobble = sin(uv.x * 8.0 + uTime * 0.15) * 0.002;
+      vec2 gridUv = uv + vec2(wobble, wobble * 0.5);
+      float g = grid(gridUv, 24.0);
+      float distFromCenter = length(uv - 0.5) * 1.4;
+      float radialFade = 1.0 - smoothstep(0.0, 1.0, distFromCenter);
+      vec3 color = mix(uBaseColor, uGridColor, g * radialFade * 0.5);
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `;
+
+  const fresnelVertex = /* glsl */ `
+    varying vec3 vNormal;
+    varying vec3 vViewPosition;
+    void main() {
+      vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+      vViewPosition = -mvPosition.xyz;
+      vNormal = normalize(normalMatrix * normal);
+      gl_Position = projectionMatrix * mvPosition;
+    }
+  `;
+
+  const fresnelFragment = /* glsl */ `
+    uniform vec3 uGlowColor;
+    uniform float uPower;
+    uniform float uIntensity;
+    varying vec3 vNormal;
+    varying vec3 vViewPosition;
+    void main() {
+      vec3 viewDir = normalize(vViewPosition);
+      float fresnel = pow(1.0 - clamp(dot(viewDir, vNormal), 0.0, 1.0), uPower);
+      gl_FragColor = vec4(uGlowColor * fresnel * uIntensity, fresnel);
+    }
+  `;
+
+  // Chiado — overlay full-screen de film grain (shader cookbook), renderizado por cima
+  // da cena numa segunda passada ortográfica. Leve o suficiente pra não custar FPS:
+  // é só um hash 2D por pixel, sem textura, sem blur.
+  const grainVertex = /* glsl */ `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = vec4(position.xy, 0.0, 1.0);
+    }
+  `;
+
+  const grainFragment = /* glsl */ `
+    uniform float uTime;
+    uniform float uIntensity;
+    varying vec2 vUv;
+
+    float filmGrain(vec2 uv, float time) {
+      return fract(sin(dot(uv + time, vec2(12.9898, 78.233))) * 43758.5453);
+    }
+
+    void main() {
+      float n = filmGrain(vUv, uTime);
+      gl_FragColor = vec4(vec3(n), uIntensity);
+    }
+  `;
+
+  // ---------- Setup ----------
+
+  const canvas = document.getElementById('void-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 5);
+
+  // fundo — plane fullscreen com o grid
+  const gridMaterial = new THREE.ShaderMaterial({
+    vertexShader: voidGridVertex,
+    fragmentShader: voidGridFragment,
+    uniforms: {
+      uTime: { value: 0 },
+      uBaseColor: { value: new THREE.Color('#050505') },
+      uGridColor: { value: new THREE.Color('#2a2a2a') },
+    },
+  });
+  const gridPlane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), gridMaterial);
+  gridPlane.position.set(0, 0, -2);
+  gridPlane.scale.set(20, 12, 1);
+  scene.add(gridPlane);
+
+  // núcleo — icosaedro com fresnel glow, cor de marca
+  const glowMaterial = new THREE.ShaderMaterial({
+    vertexShader: fresnelVertex,
+    fragmentShader: fresnelFragment,
+    uniforms: {
+      uGlowColor: { value: new THREE.Color('#8c1710') },
+      uPower: { value: 2.5 },
+      uIntensity: { value: 1.1 },
+    },
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+  });
+  const glowCore = new THREE.Mesh(new THREE.IcosahedronGeometry(1.15, 3), glowMaterial);
+  scene.add(glowCore);
+
+  // segunda cena, ortográfica, só com o quad de grain — renderizada por cima sem limpar
+  // o frame anterior (autoClear = false), pra ficar sobreposta à cena principal
+  const grainScene = new THREE.Scene();
+  const grainCamera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+  const grainMaterial = new THREE.ShaderMaterial({
+    vertexShader: grainVertex,
+    fragmentShader: grainFragment,
+    uniforms: {
+      uTime: { value: 0 },
+      uIntensity: { value: 0.05 }, // sutil — chiado deve ser sentido, não visto
+    },
+    transparent: true,
+  });
+  grainScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), grainMaterial));
+  renderer.autoClear = false;
+
+  // ---------- Loop ----------
+
+  const clock = new THREE.Clock();
+
+  function animate() {
+    const t = clock.getElapsedTime();
+    gridMaterial.uniforms.uTime.value = t;
+
+    glowCore.rotation.y = t * 0.08;
+    const pulse = 1 + Math.sin(t * 0.6) * 0.04;
+    glowCore.scale.setScalar(pulse);
+
+    // valor sem interpolação suave, de propósito — grain "liso" no tempo lê como
+    // textura, não como chiado; precisa saltar frame a frame pra ler como estática
+    grainMaterial.uniforms.uTime.value = t + Math.random() * 100.0;
+
+    renderer.clear();
+    renderer.render(scene, camera);
+    renderer.render(grainScene, grainCamera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // fallback sem WebGL — nunca deixa a página em branco
+  if (!renderer.getContext()) {
+    canvas.style.display = 'none';
+    document.body.style.background = '#050505';
+  }
+
+  // ---------- Entrada (GSAP, easing custom — nunca linear) ----------
+
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  tl.to('#eyebrow', { opacity: 1, duration: 0.8 })
+    .fromTo('#headline', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1.1 }, '-=0.5')
+    .fromTo('#tagline', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.7')
+    .fromTo('#email-form', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.9 }, '-=0.6');
+
+  // ---------- Formulário ----------
+
+  const form = document.getElementById('email-form');
+  const input = document.getElementById('email-input');
+  const submitBtn = document.getElementById('email-submit');
+  const statusMsg = document.getElementById('status-msg');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = input.value.trim();
+    if (!email) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = '...';
+    statusMsg.textContent = '';
+    statusMsg.className = 'status-msg';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('subscribe failed');
+
+      form.style.display = 'none';
+      statusMsg.textContent = 'Pronto. Você vai ser avisado assim que lançarmos.';
+      statusMsg.classList.add('success');
+    } catch {
+      statusMsg.textContent = 'Não foi possível enviar agora. Tenta de novo em instantes.';
+      statusMsg.classList.add('error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Avisar';
+    }
+  });
+</script>
+</body>
+</html>
