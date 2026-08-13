@@ -1,130 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sobre — Black Void</title>
-<meta name="description" content="A história, missão, visão e valores da Black Void."/>
-<link rel="icon" href="assets/img/logo.png"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/style.css"/>
-
-<style>
-  .split{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}
-  @media (max-width:800px){.split{grid-template-columns:1fr}}
-  .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-  .values-grid .card{background:var(--bg)}
-  @media (max-width:800px){.values-grid{grid-template-columns:1fr}}
-  .flow{display:flex;flex-direction:column}
-  .flow-step{display:grid;grid-template-columns:70px 1fr;gap:28px;padding:28px 0;border-bottom:1px solid var(--line)}
-  .flow-step .num{font-family:var(--font-display);font-size:26px;color:var(--muted-2)}
-  .flow-step h4{font-size:18px;margin-bottom:6px}
-  .flow-step p{color:var(--muted);font-size:14px;max-width:520px}
-  .name-block{padding:40px;border:1px solid var(--line);background:var(--panel)}
-  .name-block h3{font-size:22px;margin-bottom:14px}
-  .name-block p{color:var(--muted);font-size:14.5px;line-height:1.75}
-  .name-block b{color:var(--void-red);font-weight:600}
-</style>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre — Black Void</title><meta name="description" content="Black Void é um estúdio de inteligência, software e infraestrutura para empresas que preferem operar com profundidade em vez de acumular camadas.">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<div id="loader"><img class="ldr-mark" src="assets/img/logo.png" alt=""/><div class="ldr-word">BLACK VOID</div><div class="ldr-bar"><i></i></div></div>
-<div class="grain"></div><div class="vignette"></div>
-<div class="cursor-dot"></div><div class="cursor-ring"></div>
-<canvas class="void-canvas"></canvas>
-
-<nav>
+  <div id="loader"><img class="ldr-mark" src="assets/img/logo.png" alt=""><div class="ldr-word">BLACK VOID / ARCHIVE</div><div class="ldr-bar"><i></i></div></div>
   <div data-include="../components/menu-superior.html"></div>
-</nav>
-
-<main>
-  <section class="page-hero">
-    <div class="wrap">
-      <div class="crumb reveal">HOME <i>/</i> SOBRE</div>
-      <span class="eyebrow reveal">Quem somos</span>
-      <h1 class="h-xl reveal" style="margin-top:22px">Nossa história<br/>é sobre resolver<br/>problemas <i style="font-style:normal;color:var(--void-red)">reais.</i></h1>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap split">
-      <div class="reveal"><span class="eyebrow">Origem</span></div>
-      <div class="reveal">
-        <p class="lead" style="max-width:720px">A Black Void nasceu da ideia de que a tecnologia pode ser muito mais do que ferramentas e códigos. Ela pode conectar pessoas, automatizar processos, acelerar negócios e transformar a maneira como empresas operam.</p>
-        <p class="lead" style="max-width:720px;margin-top:20px">Inspirada pelo ambiente de inovação e excelência tecnológica da Suíça, a Black Void surgiu com uma visão ambiciosa: unir engenharia de software, inteligência artificial, infraestrutura e segurança digital em um único ecossistema.</p>
-        <p class="lead" style="max-width:720px;margin-top:20px">Desde o primeiro conceito, o objetivo nunca foi apenas desenvolver sites ou sistemas — sempre foi construir soluções inteligentes que ajudassem empresas a crescer, reduzir custos e aumentar produtividade com as tecnologias mais modernas do mercado. Hoje, a Black Void continua evoluindo como uma empresa orientada à inovação, desenvolvendo produtos próprios e investindo em inteligência artificial como parte central da sua estratégia.</p>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="name-block reveal">
-        <span class="tag" style="font-family:var(--font-mono);font-size:11px;color:var(--void-red);letter-spacing:.14em">O SIGNIFICADO DO NOME</span>
-        <h3 style="margin-top:16px">Black Void</h3>
-        <p>Representa o espaço onde novas possibilidades podem surgir. Assim como o universo guarda infinitas oportunidades para descobertas, a Black Void acredita que cada desafio pode ser o ponto de partida para uma solução inovadora. O <b>"Void"</b> simboliza um ambiente sem limites para criar, experimentar e evoluir. Já o <b>"Black"</b> representa sofisticação, profundidade, foco e a base sólida sobre a qual novas ideias são construídas.</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head reveal"><div><span class="eyebrow">Missão, visão & propósito</span></div></div>
-      <div class="grid-3" style="background:var(--line)">
-        <div class="card reveal" style="--i:0"><span class="tag">Missão</span><h3>Simplificar o complexo</h3><p>Transformar desafios complexos em soluções tecnológicas simples, eficientes e escaláveis, permitindo que empresas usem IA, automação e software para alcançar novos níveis de produtividade.</p></div>
-        <div class="card reveal" style="--i:1"><span class="tag">Visão</span><h3>Impacto global</h3><p>Ser reconhecida internacionalmente como uma empresa de tecnologia capaz de criar produtos que impactem pessoas, empresas e mercados, tornando a IA mais acessível, confiável e eficiente.</p></div>
-        <div class="card reveal" style="--i:2"><span class="tag">Compromisso</span><h3>Valor duradouro</h3><p>Mais do que entregar software, buscamos relações duradouras. Cada projeto é uma parceria baseada em confiança, qualidade técnica e evolução constante.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <div class="section-head reveal"><div><span class="eyebrow">Valores</span></div></div>
-      <div class="values-grid">
-        <div class="card reveal" style="--i:0"><span class="tag">01</span><h3>Inovação</h3><p>Buscamos constantemente novas tecnologias, metodologias e ideias para desenvolver soluções modernas e relevantes.</p></div>
-        <div class="card reveal" style="--i:1"><span class="tag">02</span><h3>Excelência</h3><p>Cada projeto é desenvolvido com foco em qualidade, desempenho e atenção aos detalhes.</p></div>
-        <div class="card reveal" style="--i:2"><span class="tag">03</span><h3>Transparência</h3><p>Acreditamos em relações claras, comunicação aberta e compromisso com nossos clientes.</p></div>
-        <div class="card reveal" style="--i:3"><span class="tag">04</span><h3>Segurança</h3><p>Protegemos dados, aplicações e infraestruturas com boas práticas e tecnologias confiáveis.</p></div>
-        <div class="card reveal" style="--i:4"><span class="tag">05</span><h3>Simplicidade</h3><p>Soluções sofisticadas por dentro, simples de usar por fora.</p></div>
-        <div class="card reveal" style="--i:5"><span class="tag">06</span><h3>Evolução contínua</h3><p>A tecnologia muda todos os dias. Por isso aprendemos continuamente para oferecer soluções sempre atualizadas.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap split">
-      <div class="reveal"><span class="eyebrow">Metodologia</span><h2 class="h-md" style="margin-top:18px">Como trabalhamos</h2></div>
-      <div class="flow reveal">
-        <div class="flow-step"><span class="num">01</span><div><h4>Descoberta</h4><p>Entendemos o negócio, os objetivos e os desafios do cliente.</p></div></div>
-        <div class="flow-step"><span class="num">02</span><div><h4>Planejamento</h4><p>Definimos arquitetura, tecnologias e cronograma.</p></div></div>
-        <div class="flow-step"><span class="num">03</span><div><h4>Design</h4><p>Criamos interfaces intuitivas e experiências modernas.</p></div></div>
-        <div class="flow-step"><span class="num">04</span><div><h4>Desenvolvimento</h4><p>Construímos a solução com tecnologias atuais e boas práticas.</p></div></div>
-        <div class="flow-step"><span class="num">05</span><div><h4>Testes</h4><p>Validações funcionais, técnicas e de desempenho.</p></div></div>
-        <div class="flow-step"><span class="num">06</span><div><h4>Implantação</h4><p>Publicamos a solução em ambiente seguro e escalável.</p></div></div>
-        <div class="flow-step" style="border-bottom:none"><span class="num">07</span><div><h4>Suporte & evolução</h4><p>Monitoramos, damos suporte e implementamos melhorias contínuas.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-block" style="border-top:1px solid var(--line)">
-    <div class="wrap">
-      <span class="eyebrow" style="justify-content:center">O fundador</span>
-      <h2 class="reveal" style="margin-top:20px;font-size:clamp(30px,4.5vw,54px)">Uma página sobre quem<br/>construiu a Black Void está a caminho.</h2>
-    </div>
-  </section>
-
-    </div>
-
-</main>
-
-<footer>
-  <div data-include="../components/menu.html"></div>
-</footer>
-<script src="../components/include.js"></script>
-<script src="assets/js/main.js"></script>
-<script src="../agent/kira.js"></script>
-
-</body>
-</html>
+  <main><section class="page-hero"><div class="wrap"><div class="crumb">BLACK VOID <i>/</i> 06</div><span class="eyebrow reveal">A casa por trás do sistema</span><h1 class="h-xl reveal" style="margin-top:22px">O vazio é espaço<br>para <em style="color:var(--void-red);font-style:normal">construir.</em></h1><p class="lead reveal" style="margin-top:30px">Black Void é um estúdio de inteligência, software e infraestrutura para empresas que preferem operar com profundidade em vez de acumular camadas.</p></div></section><section class="scene-section scene-culture"><div class="wrap"><div class="scene-header"><span class="eyebrow">O que não aparece no organograma</span><span class="meta">CULTURE / 05</span></div><div class="culture-stage"><img src="assets/img/void-creative-work.webp" alt="Mesa de trabalho com materiais e luz baixa" loading="lazy"><div class="culture-stamp"><span>WE BUILD</span><strong>WITH<br>ATTENTION.</strong><span>NOT WITH NOISE.</span></div></div><div class="culture-columns"><p>Somos uma equipe compacta porque proximidade é parte do método. As melhores decisões acontecem quando a pergunta consegue atravessar o espaço entre quem pensa e quem constrói.</p><p>Não trabalhamos para parecer ocupados. Trabalhamos para deixar algo mais claro, mais forte e mais capaz do que estava quando chegamos.</p></div></div></section><section><div class="wrap"><div class="split split--wide"><div><span class="eyebrow reveal">Objeto de estudo</span><p class="lead reveal" style="margin-top:24px">Trabalhamos entre estratégia e execução: lemos o problema, desenhamos a arquitetura e ficamos perto do que acontece depois do lançamento.</p></div><div class="feature-art reveal"><img src="assets/img/void-portrait.webp" alt="Colaboradores em silhueta sobre uma mesa iluminada" loading="lazy"><div><span class="tag">FIG. 06</span><h3>Uma equipe pequena para problemas que não são.</h3></div></div></div></div></section><section><div class="wrap"><div class="quote reveal"><p>A profundidade não é uma estética. É o tempo que uma equipe decide <em>permanecer</em> diante do problema.</p><cite>BLACK VOID / NOTA DE ARQUIVO</cite></div></div></section><section><div class="wrap"><div class="section-head"><div><span class="eyebrow">Estrutura</span><h2 class="h-lg" style="margin-top:18px">Como pensamos</h2></div><p class="lead">Cada camada tem uma função. Juntas, elas formam uma operação menos fragmentada.</p></div><div class="chapter-list"><article class="chapter reveal"><span class="chapter-index">01 / 01</span><div><h3>Começamos pelo sistema.</h3><p>Antes da tela, entendemos o fluxo, a responsabilidade e o que precisa continuar funcionando.</p><div style="margin-top:20px"><span class="pill">Contexto</span><span class="pill">Risco</span><span class="pill">Ritmo</span></div></div></article><article class="chapter reveal"><span class="chapter-index">02 / 02</span><div><h3>Projetamos com presença.</h3><p>A linguagem visual, o produto e a operação precisam dizer a mesma coisa.</p><div style="margin-top:20px"><span class="pill">Marca</span><span class="pill">Produto</span><span class="pill">Equipe</span></div></div></article><article class="chapter reveal"><span class="chapter-index">03 / 03</span><div><h3>Construímos para o depois.</h3><p>A primeira entrega abre caminho para a próxima, sem deixar o time dependente da agência.</p><div style="margin-top:20px"><span class="pill">Handover</span><span class="pill">Documentação</span><span class="pill">Evolução</span></div></div></article></div></div></section><section class="cta-block"><div class="wrap"><span class="eyebrow">Próximo capítulo</span><h2 class="reveal" style="margin-top:18px">A complexidade<br>pode <em style="color:var(--void-red);font-style:normal">ceder.</em></h2><a class="btn" href="contato.html">Conhecer a equipe <span aria-hidden="true">↗</span></a></div></section></main>
+  <footer><div data-include="../components/menu.html"></div></footer>
+  <script src="../components/include.js"></script><script src="assets/js/main.js"></script>
+</body></html>

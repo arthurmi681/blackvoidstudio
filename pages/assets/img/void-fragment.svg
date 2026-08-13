@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Fragmento de construção</title><desc id="desc">Planos escuros, linhas de medição e uma forma mineral vermelha.</desc>
+  <defs><linearGradient id="wash" x2="1" y2="1"><stop stop-color="#070706"/><stop offset=".55" stop-color="#191713"/><stop offset="1" stop-color="#351914"/></linearGradient><filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter></defs>
+  <rect width="1200" height="900" fill="url(#wash)"/><path d="M90 760 430 170 1060 150 880 790Z" fill="#0c0c0b" stroke="#a78d63" stroke-opacity=".44"/><path d="m190 670 318-394 300 110-146 330z" fill="#24211c" stroke="#e9e4d8" stroke-opacity=".16"/><path d="m618 370 250-134 110 260-286 170z" fill="#8f2c23" fill-opacity=".82" filter="url(#shadow)"/><path d="M112 102h970M112 150v630M210 102v678M998 102v678" stroke="#e9e4d8" stroke-opacity=".16" stroke-dasharray="2 14"/><g fill="#e9e4d8" font-family="monospace" font-size="14" letter-spacing="3"><text x="122" y="84">BLACK VOID / FRAGMENT 02</text><text x="860" y="826">OBJECT / 2026</text></g>
+</svg>
