@@ -8,10 +8,11 @@ missing = []
 missing_images = []
 external = 0
 links = 0
+vercel_rewrites = {'../branding', '../branding/'}
 for page in html_files:
     text = page.read_text(encoding='utf-8', errors='ignore')
     for target in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', text):
-        if target.startswith(('#', 'mailto:', 'tel:', 'data:', 'http:', 'https:', '/manus-storage/', '/src/')):
+        if target in vercel_rewrites or target.startswith(('#', 'mailto:', 'tel:', 'data:', 'http:', 'https:', '/manus-storage/', '/src/')):
             external += 1
             continue
         links += 1
