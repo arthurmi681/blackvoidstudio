@@ -112,6 +112,8 @@ p { max-width: 720px; }
 .card:hover::before { width: 100%; }
 .card h3 { font-size: clamp(28px, 3vw, 46px); margin: 24px 0 14px; }
 .card p { color: var(--fg-dim); font-size: 14px; line-height: 1.7; }
+.card--access .text-link { margin-top: 28px; color: var(--muted); }
+.card--access:hover .text-link { color: var(--void-red); }
 .card--paper { background: var(--paper); color: var(--bg); }
 .card--paper p, .card--paper .meta { color: #5f5a50; }
 .card--paper .tag { color: var(--void-red-dim); }
