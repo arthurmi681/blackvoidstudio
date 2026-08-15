@@ -1,6 +1,17 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "echo 'Static site - no build needed'",
   "outputDirectory": ".",
   "framework": null,
-  "installCommand": "echo 'No install needed'"
+  "installCommand": "echo 'No install needed'",
+  "rewrites": [
+    {
+      "source": "/branding",
+      "destination": "https://sistema-branding-arthurmiyazaki3-1925s-projects.vercel.app/branding"
+    },
+    {
+      "source": "/branding/:path*",
+      "destination": "https://sistema-branding-arthurmiyazaki3-1925s-projects.vercel.app/branding/:path*"
+    }
+  ]
 }
