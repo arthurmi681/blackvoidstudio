@@ -12,14 +12,27 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     if (toggle && links && !toggle.dataset.ready) {
       toggle.dataset.ready = 'true';
+      const closeMenu = () => {
+        links.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Abrir menu');
+        document.body.classList.remove('menu-open');
+      };
       toggle.addEventListener('click', () => {
         const open = links.classList.toggle('open');
         toggle.classList.toggle('open', open);
         toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        document.body.classList.toggle('menu-open', open);
       });
-      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-        links.classList.remove('open'); toggle.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false');
-      }));
+      links.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 920) closeMenu();
+      }, { passive: true });
     }
 
     const current = location.pathname.split('/').pop() || 'index.html';
