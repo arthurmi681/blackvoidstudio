@@ -1,0 +1,161 @@
+# robots.txt para Black Void Studio
+# Direciona crawlers de IA para a página otimizada
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://blackvoid.studio/sitemap.xml
+
+# Crawlers de IA conhecidos - página otimizada com dados estruturados
+User-agent: GPTBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: ChatGPT-User
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: OAI-SearchBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: ClaudeBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Claude-Web
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: anthropic-ai
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: PerplexityBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Perplexity-User
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Google-Extended
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: VertexAI
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Gemini
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Bard
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: bingbot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: MSNBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Microsoft-Web-Exploration
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: facebookexternalhit
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: AppleBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Applebot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: CohereBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: MistralBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: HuggingFaceBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: Bytespider
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: YouBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: DuckDuckBot
+Allow: /ia-crawler.html
+Disallow: /
+
+User-agent: PetalBot
+Allow: /ia-crawler.html
+Disallow: /
+
+# Crawlers gerais de busca - permitem tudo mas priorizam ia-crawler
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# Crawlers de SEO - permitem tudo
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: DataForSeoBot
+Allow: /
+
+User-agent: SeznamBot
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+# Crawl-delay para não sobrecarregar
+Crawl-delay: 10
