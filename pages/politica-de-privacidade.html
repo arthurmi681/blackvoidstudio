@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Política de Privacidade — Black Void</title>
+  <meta name="description" content="Como a Black Void Studio coleta, utiliza, armazena e protege dados pessoais de visitantes do site, em conformidade com a Lei Geral de Proteção de Dados Pessoais (LGPD — Lei nº 13.709/2018).">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackvoid.dev/politica-de-privacidade">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .privacy-legal h2{font-size:1.35rem;margin:2.4rem 0 1rem;font-weight:600;letter-spacing:0.01em}
+    .privacy-legal h2 .num{color:var(--void-red);font-family:var(--font-mono);font-size:.85em;margin-right:.5em}
+    .privacy-legal p,.privacy-legal li{color:var(--muted);line-height:1.75;max-width:72ch}
+    .privacy-legal ul{margin:.6rem 0 0;padding-left:1.2rem}
+    .privacy-legal li{margin-bottom:.4rem}
+    .privacy-legal strong{color:var(--fg)}
+    .privacy-legal table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .privacy-legal th,.privacy-legal td{text-align:left;vertical-align:top;padding:.7rem .9rem;border:1px solid var(--line);color:var(--muted);line-height:1.6}
+    .privacy-legal th{color:var(--fg);font-weight:600;background:var(--panel)}
+    .privacy-note{border:1px solid var(--line);border-left:2px solid var(--void-red);padding:1rem 1.2rem;margin:1.4rem 0;background:var(--panel)}
+    .privacy-note p{margin:0}
+    mark.pendente{background:transparent;color:var(--void-red);border:1px dashed var(--void-red);border-radius:3px;padding:0 .35em;font-style:normal;white-space:nowrap}
+    @media (max-width:720px){.privacy-legal th,.privacy-legal td{padding:.55rem .6rem;font-size:.9rem}}
+  </style>
+</head>
+<body>
+  <div id="loader"><img class="ldr-mark" src="assets/img/logo.png" alt=""><div class="ldr-word">BLACK VOID / PRIVACIDADE</div><div class="ldr-bar"><i></i></div></div>
+  <div data-include="../components/menu-superior.html"></div>
+
+  <main>
+    <section class="page-hero"><div class="wrap"><div class="crumb">BLACK VOID <i>/</i> LEGAL</div><span class="eyebrow reveal">Documento público</span><h1 class="h-xl reveal" style="margin-top:22px">Política de<br><em style="color:var(--void-red);font-style:normal">Privacidade.</em></h1><p class="lead reveal" style="margin-top:30px">Como este site coleta, utiliza, armazena e protege dados pessoais, em conformidade com a Lei Geral de Proteção de Dados Pessoais — LGPD (Lei nº 13.709/2018).</p><p class="meta reveal" style="margin-top:18px;color:var(--muted)">Versão 1.0 — publicada em 15 de outubro de 2026</p></div></section>
+
+    <section class="privacy-legal"><div class="wrap">
+
+      <div class="privacy-note"><p><strong>Aviso de revisão.</strong> Esta política foi redigida a partir do comportamento real do código do site. Os campos marcados como <mark class="pendente">pendente</mark> dependem de informação oficial da empresa e o texto deve ser revisado pelo responsável legal da Black Void Studio e, quando necessário, por um profissional jurídico, antes de ser considerado definitivo.</p></div>
+
+      <h2><span class="num">01</span>Quem é responsável pelos seus dados</h2>
+      <p>O controlador dos dados pessoais coletados neste site é <strong>Black Void Studio</strong>, estúdio brasileiro de tecnologia sediado em Dourados, Mato Grosso do Sul, Brasil.</p>
+      <ul>
+        <li>Razão social: <mark class="pendente">pendente — confirmar razão social</mark></li>
+        <li>CNPJ: <mark class="pendente">pendente — confirmar CNPJ</mark></li>
+        <li>Endereço comercial: <mark class="pendente">pendente — confirmar endereço</mark></li>
+        <li>Canal de privacidade: <mark class="pendente">pendente — confirmar e-mail oficial</mark> (o site utiliza atualmente <strong>contato@blackvoid.studio</strong> no formulário de contato)</li>
+      </ul>
+
+      <h2><span class="num">02</span>Quais dados pessoais coletamos</h2>
+      <p>Esta seção descreve o que o código do site efetivamente coleta hoje — nem mais, nem menos:</p>
+      <table>
+        <tr><th>Origem</th><th>Dados</th><th>Como acontece</th></tr>
+        <tr><td>Formulário de contato (<a class="text-link" href="contato.html">/pages/contato.html</a>)</td><td>Nome, e-mail e o texto da mensagem que você escreve</td><td>O formulário usa <code>mailto:</code>: os dados saem do seu navegador para o seu próprio aplicativo de e-mail, que envia a mensagem para a caixa de entrada da Black Void. O site <strong>não</strong> envia esses dados para nenhum servidor próprio.</td></tr>
+        <tr><td>Chat <strong>Kira</strong> (assistente de IA na página inicial)</td><td>As mensagens que você digita no chat</td><td>Por padrão, as respostas são geradas localmente no seu navegador (base de respostas do próprio site) e <strong>nada é enviado</strong> a servidores externos. Somente se existir uma chave de API de IA configurada <strong>no seu próprio navegador</strong> (<code>localStorage</code>), as mensagens são enviadas diretamente do seu navegador para a API da Groq (ver seção 04).</td></tr>
+        <tr><td>Navegação no site</td><td>Endereço IP, data/hora, páginas acessadas e agente de usuário</td><td>Registros técnicos gerados automaticamente pela infraestrutura de hospedagem (Vercel), presentes em qualquer site.</td></tr>
+        <tr><td>Chave de API de IA (opcional, fornecida por você)</td><td>A chave gravada em <code>localStorage</code> (<code>grok_key</code> ou <code>kira_api_key</code>)</td><td>Fica armazenada apenas no seu dispositivo e é usada exclusivamente para autenticar as chamadas do chat ao provedor de IA. O site não a transmite para outros destinos.</td></tr>
+      </table>
+      <p><strong>O que o site não faz:</strong> não há cadastro de usuários, login, banco de dados próprio, ferramentas de analytics, pixels de publicidade, rastreamento de comportamento nem venda de dados.</p>
+
+      <h2><span class="num">03</span>Para que usamos esses dados (finalidades e bases legais)</h2>
+      <table>
+        <tr><th>Finalidade</th><th>Dados</th><th>Base legal (art. 7º da LGPD)</th></tr>
+        <tr><td>Responder ao seu contato, preparar propostas e dar andamento a conversas comerciais iniciadas por você</td><td>Nome, e-mail, mensagem</td><td>V — execução de procedimentos preliminares a pedido do titular; IX — legítimo interesse (atendimento)</td></tr>
+        <tr><td>Fornecer a funcionalidade do chat Kira que você acionou</td><td>Mensagens digitadas no chat</td><td>IX — legítimo interesse (disponibilizar a funcionalidade solicitada, sem identificação do visitante)</td></tr>
+        <tr><td>Manter o site seguro, disponível e auditável (logs técnicos)</td><td>IP, data/hora, URL, agente de usuário</td><td>IX — legítimo interesse (segurança da informação)</td></tr>
+      </table>
+      <p>Sempre que o tratamento se basear em legítimo interesse, ele é limitado ao estritamente necessário para a finalidade descrita e respeita os direitos e garantias do titular.</p>
+
+      <h2><span class="num">04</span>Com quem compartilhamos dados</h2>
+      <ul>
+        <li><strong>Groq, Inc.</strong> (Estados Unidos) — provedor do modelo de IA (Llama 3.3, via <code>api.groq.com</code>). Recebe as mensagens do chat <strong>apenas quando</strong> há uma chave de API configurada no navegador do visitante; nesse caso, a comunicação acontece diretamente entre o seu navegador e a Groq, sem intermediário da Black Void.</li>
+        <li><strong>Vercel, Inc.</strong> (Estados Unidos) — hospedagem e rede de entrega do site; processa os registros técnicos descritos na seção 02.</li>
+      </ul>
+      <p>Não vendemos nem alugamos dados pessoais. Os painéis de TMS (Painel ADM e Portal Cliente) e o sistema de branding apontados neste site são <strong>sistemas separados</strong>, com responsabilidades próprias — o tratamento de dados realizado neles deve ser descrito nas políticas específicas desses ambientes. <mark class="pendente">pendente — confirmar responsáveis e políticas dos sistemas de TMS/branding</mark></p>
+
+      <h2><span class="num">05</span>Cookies e armazenamento no seu dispositivo</h2>
+      <p>Este site <strong>não utiliza cookies</strong> de nenhum tipo — nem de rastreamento, nem de preferências, nem de sessão. Utilizamos apenas o armazenamento local do navegador (<code>localStorage</code>) para dois registros técnicos que não saem do seu dispositivo:</p>
+      <ul>
+        <li><code>kira_seen_v1</code> — marca que a mensagem de boas-vindas do chat já foi exibida;</li>
+        <li><code>grok_key</code> / <code>kira_api_key</code> — chave de API de IA gravada por iniciativa do próprio visitante (quando existir).</li>
+      </ul>
+      <p>Como não há cookies não essenciais nem rastreadores de terceiros, o site não exibe banner de consentimento. Você pode apagar esses registros a qualquer momento limpando os dados do site no seu navegador.</p>
+
+      <h2><span class="num">06</span>Armazenamento, retenção e descarte</h2>
+      <ul>
+        <li><strong>Site:</strong> não mantém banco de dados nem cadastros; o site é estático.</li>
+        <li><strong>Chat Kira:</strong> o histórico da conversa <strong>não é persistido</strong> — fica na memória da página e é descartado ao fechar ou recarregar o site.</li>
+        <li><strong>E-mails de contato:</strong> permanecem na caixa de entrada da Black Void até a conclusão do atendimento e por prazo adicional de referência comercial. <mark class="pendente">pendente — definir prazo de retenção dos e-mails</mark></li>
+        <li><strong>Logs de infraestrutura:</strong> retidos pelo provedor de hospedagem conforme as políticas da Vercel. <mark class="pendente">pendente — confirmar período de retenção dos logs no plano contratado</mark></li>
+      </ul>
+
+      <h2><span class="num">07</span>Segurança</h2>
+      <p>O site é servido exclusivamente por HTTPS, com cabeçalhos de segurança configurados (<code>X-Content-Type-Options</code>, <code>X-Frame-Options</code>, <code>X-XSS-Protection</code>), e coleta o mínimo de dados possível por desenho — o que reduz a superfície de risco. Nenhuma medida elimina totalmente o risco de incidentes; em caso de incidente relevante envolvendo dados pessoais, a Black Void avaliará as obrigações de comunicação previstas na LGPD (arts. 48 e seguintes).</p>
+
+      <h2><span class="num">08</span>Seus direitos como titular</h2>
+      <p>Nos termos do art. 18 da LGPD, você pode solicitar, a qualquer tempo e de forma gratuita:</p>
+      <ul>
+        <li>confirmação da existência de tratamento e acesso aos seus dados;</li>
+        <li>correção de dados incompletos, inexatos ou desatualizados;</li>
+        <li>anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade;</li>
+        <li>portabilidade dos dados, observados os segredos comerciais e industriais;</li>
+        <li>eliminação dos dados tratados com base no seu consentimento;</li>
+        <li>informação sobre os compartilhamentos realizados;</li>
+        <li>revisão de decisões tomadas unicamente com base em tratamento automatizado que afetem seus interesses;</li>
+        <li>oposição a tratamentos realizados com fundamento diverso do consentimento, em caso de irregularidade.</li>
+      </ul>
+      <p>Para exercer esses direitos, escreva para o canal de contato informado na seção 01 <mark class="pendente">pendente — confirmar e-mail oficial</mark> indicando o pedido. Responderemos no prazo legal. Você também pode apresentar reclamação à Autoridade Nacional de Proteção de Dados (ANPD).</p>
+
+      <h2><span class="num">09</span>Dados de crianças e adolescentes</h2>
+      <p>Este site tem conteúdo comercial destinado a empresas e não é direcionado a menores de idade. Não coletamos intencionalmente dados de crianças ou adolescentes; se identificarmos algum dado assim coletado, ele será eliminado.</p>
+
+      <h2><span class="num">10</span>Transferência internacional de dados</h2>
+      <p>Os provedores citados (Groq e Vercel) processam dados nos Estados Unidos, o que caracteriza transferência internacional nos termos do art. 33 da LGPD. Confirmamos com cada provedor a existência de garantias adequadas (como cláusulas contratuais padrão). <mark class="pendente">pendente — confirmar/documentar as garantias contratuais com Groq e Vercel</mark></p>
+
+      <h2><span class="num">11</span>Alterações desta política</h2>
+      <p>Esta política pode ser atualizada para refletir mudanças no site ou na legislação. A versão vigente é sempre a publicada nesta página, com a data de publicação indicada no topo. Alterações relevantes serão destacadas no próprio documento.</p>
+      <p style="margin-top:24px">Última atualização: <strong>15 de outubro de 2026</strong>.</p>
+
+    </div></section>
+  </main>
+
+  <footer><div data-include="../components/menu.html"></div></footer>
+  <script src="../components/include.js"></script><script src="assets/js/main.js"></script>
+</body></html>

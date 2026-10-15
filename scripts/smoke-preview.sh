@@ -68,7 +68,9 @@ check "/"           "$PERPLEX"   ia "PerplexityBot"
 check "/"           "$BINGBOT"   ia "bingbot"
 check "/"           "$APPLEBOT"  ia "Applebot"
 check "/index.html" "$GPTBOT"    ia "GPTBot"
-check "/home.html"  "$GPTBOT"    ia "GPTBot"
+# Nota: GPTBot acessando /home.html DIRETO recebe home.html — na Vercel, arquivos
+# existentes têm precedência sobre rewrites. Comportamento idêntico ao de hoje.
+check "/home.html"  "$GPTBOT"    home "GPTBot (arquivo direto)"
 
 echo "== Endereços diretos da página de IA (qualquer UA) =="
 check "/ia-crawler"      "$BROWSER" ia "humano em /ia-crawler"

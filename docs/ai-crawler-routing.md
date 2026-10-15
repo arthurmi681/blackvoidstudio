@@ -29,12 +29,16 @@ da Vercel (sem função serverless, sem build):
 ```
 /            + UA de IA  →  /pages/ia-crawler.html
 /index.html  + UA de IA  →  /pages/ia-crawler.html
-/home.html   + UA de IA  →  /pages/ia-crawler.html
 /            + demais    →  /home.html          (fallback humano)
 /index.html  + demais    →  /home.html          (links antigos continuam válidos)
 ```
 
 - Regras avaliadas em ordem; a primeira que casa vence. O fallback humano fica por último.
+- **Precedência do filesystem:** na Vercel, arquivos existentes vencem rewrites. Por isso
+  (1) não pode existir `index.html` na raiz, senão `/` serviria o arquivo e ignoraria o
+  rewrite condicional; e (2) um acesso **direto** a `/home.html` ou `/pages/ia-crawler.html`
+  serve sempre o arquivo, independente do User-Agent — comportamento idêntico ao anterior.
+  Sem `robots.txt`, bots educados não buscam `/home.html` (está sob `Disallow: /` para eles).
 - Como cada variante aponta para um **arquivo de destino diferente**, o cache da CDN fica
   segmentado por destino (sem contaminação cruzada entre bot e humano). A resposta de `/`
   também leva `Vary: User-Agent` para caches intermediários.
@@ -53,6 +57,9 @@ existia no middleware removido:
 PerplexityBot|Perplexity-User|Google-Extended|VertexAI|Gemini|Bard|bingbot|Bingbot|MSNBot|
 Microsoft-Web-Exploration|Meta-ExternalAgent|Meta-ExternalFetcher|facebookexternalhit|
 Applebot|AppleBot|CohereBot|MistralBot|HuggingFaceBot|Bytespider|YouBot|DuckDuckBot|PetalBot).*
+
+(`MSNBot` está escrito como `[Mm][Ss][Nn][Bb]ot` no vercel.json porque o match é
+case-sensitive e os UAs legados usam `msnbot` minúsculo.)
 ```
 
 Notas de manutenção:

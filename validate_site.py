@@ -8,7 +8,7 @@ missing = []
 missing_images = []
 external = 0
 links = 0
-vercel_rewrites = {'../branding', '../branding/'}
+vercel_rewrites = {'../branding', '../branding/', '/politica-de-privacidade'}
 for page in html_files:
     text = page.read_text(encoding='utf-8', errors='ignore')
     for target in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', text):
