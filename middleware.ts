@@ -1,43 +1,23 @@
 // Edge Middleware para Vercel - Web APIs padrão (sem Next.js)
-// Direciona crawlers de IA reconhecidos para /ia-crawler.html internamente
+// Roteia: IAs conhecidas → /ia-crawler.html | Humanos → /home.html
 
-// Lista de user-agents de crawlers de IA conhecidos (baseado em documentação pública)
 const AI_CRAWLERS = [
   // OpenAI
-  'GPTBot',
-  'OAI-SearchBot',
-  'ChatGPT-User',
-
+  'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
   // Anthropic
-  'ClaudeBot',
-  'Claude-SearchBot',
-  'anthropic-ai',
-
+  'ClaudeBot', 'Claude-SearchBot', 'anthropic-ai',
   // Perplexity
-  'PerplexityBot',
-  'Perplexity-User',
-
+  'PerplexityBot', 'Perplexity-User',
   // Google
-  'Google-Extended',
-  'VertexAI',
-  'Gemini',
-
+  'Google-Extended', 'VertexAI', 'Gemini',
   // Microsoft
-  'bingbot',
-  'MSNBot',
-
+  'bingbot', 'MSNBot',
   // Meta
-  'Meta-ExternalAgent',
-  'Meta-ExternalFetcher',
-
+  'Meta-ExternalAgent', 'Meta-ExternalFetcher',
   // Apple
   'AppleBot',
-
   // Outros documentados
-  'Bytespider',
-  'YouBot',
-  'CohereBot',
-  'MistralBot',
+  'Bytespider', 'YouBot', 'CohereBot', 'MistralBot',
 ];
 
 function isAICrawler(userAgent: string): boolean {
@@ -46,42 +26,40 @@ function isAICrawler(userAgent: string): boolean {
   return AI_CRAWLERS.some(crawler => ua.includes(crawler.toLowerCase()));
 }
 
+const EXCLUDED_PATHS = [
+  '/assets/', '/components/', '/agent/', '/equipe/',
+  '/black-void-pages/', '/docs/', '/api/', '/ia-crawler',
+];
+
+function isExcluded(pathname: string): boolean {
+  return EXCLUDED_PATHS.some(p => pathname.startsWith(p)) || pathname.includes('.');
+}
+
 export default async function middleware(request: Request): Promise<Response> {
   const url = new URL(request.url);
   const userAgent = request.headers.get('user-agent') || '';
   const pathname = url.pathname;
 
-  // Não processar assets, api, arquivos com extensão, nem a própria página ia-crawler
-  if (
-    pathname.startsWith('/assets/') ||
-    pathname.startsWith('/components/') ||
-    pathname.startsWith('/agent/') ||
-    pathname.startsWith('/equipe/') ||
-    pathname.startsWith('/black-void-pages/') ||
-    pathname.startsWith('/docs/') ||
-    pathname.startsWith('/api/') ||
-    pathname.includes('.') || // arquivos com extensão (.css, .js, .svg, etc.)
-    pathname === '/ia-crawler.html' ||
-    pathname === '/ia-crawler'
-  ) {
-    return fetch(request); // passa direto
+  // Excluir assets, api, arquivos com extensão, ia-crawler
+  if (isExcluded(pathname)) {
+    return fetch(request);
   }
 
-  // Verificar se é crawler de IA
   const isAI = isAICrawler(userAgent);
 
-  // Se for IA acessando a raiz, reescrever internamente para /ia-crawler.html
-  if (isAI && pathname === '/') {
-    const iaUrl = new URL('/ia-crawler.html', request.url);
-    const response = await fetch(iaUrl, {
+  // Raiz: rotear baseado no User-Agent
+  if (pathname === '/') {
+    const targetPath = isAI ? '/ia-crawler.html' : '/home.html';
+    const targetUrl = new URL(targetPath, request.url);
+    const response = await fetch(targetUrl, {
       headers: request.headers,
       method: request.method,
     });
 
-    // Adicionar headers de debug para identificar o roteamento
     const newHeaders = new Headers(response.headers);
-    newHeaders.set('x-ai-crawler-routed', 'true');
+    newHeaders.set('x-ai-crawler-routed', isAI ? 'true' : 'false');
     newHeaders.set('x-ai-user-agent', userAgent.slice(0, 200));
+    newHeaders.set('x-served-content', isAI ? 'ia-crawler' : 'home');
 
     return new Response(response.body, {
       status: response.status,
@@ -90,18 +68,12 @@ export default async function middleware(request: Request): Promise<Response> {
     });
   }
 
-  // Para humanos e outros paths, deixar o fluxo normal (serve index.html ou outros arquivos)
+  // Demais paths: fluxo normal (vercel.json rewrites ou 404)
   return fetch(request);
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except:
-     * - assets, components, agent, equipe, black-void-pages, docs, api
-     * - files with extensions
-     * - ia-crawler.html itself
-     */
     '/((?!assets|components|agent|equipe|black-void-pages|docs|api|.*\\..*|ia-crawler).*)',
   ],
 };

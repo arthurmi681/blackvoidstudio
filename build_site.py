@@ -151,7 +151,7 @@ for slug, config in COMMON.items():
         config['image_note'] = config.get('image_note', 'Uma camada visual para tornar a ideia mais próxima, concreta e memorável.')
     (PAGES / f'{slug}.html').write_text(editorial_page(config), encoding='utf-8')
 
-(ROOT / 'index.html').write_text(home_page(), encoding='utf-8')
+(ROOT / 'home.html').write_text(home_page(), encoding='utf-8')
 
 def contact_page():
     body = hero('Contato', 'Dê um nome<br>ao próximo <em style="color:var(--void-red);font-style:normal">movimento.</em>', 'Conte o que está difícil, o que já tentou e o que precisa ser verdade depois da primeira entrega.', '22')
