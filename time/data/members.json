@@ -1,0 +1,107 @@
+{
+  "site": {
+    "name": "Time — Black Void",
+    "origin": "https://time.blackvoid.dev",
+    "mainSite": "https://www.blackvoid.dev",
+    "description": "A equipe por trás da Black Void: perfis profissionais, especialidades, projetos e contribuições.",
+    "locale": "pt-BR",
+    "footerNote": "Construído no vazio."
+  },
+  "members": [
+    {
+      "slug": "arthur",
+      "name": "Arthur Miyazaki",
+      "role": "Founder & Full Stack Developer",
+      "discipline": "AI Engineer",
+      "location": "Dourados · MS · Brasil",
+      "since": "Jan 2023",
+      "headline": "Sistemas que pensam. Produtos que funcionam.",
+      "bio": [
+        "Fundador da Black Void, software house especializada em soluções inteligentes que unem engenharia de software, automação e inteligência artificial.",
+        "Desenvolvo aplicações web completas, sistemas multiagentes com memória e pipelines de automação — do levantamento de requisitos ao deploy em Linux."
+      ],
+      "coordinates": ["Engineering", "Automation", "Intelligence"],
+      "photo": {
+        "src": "assets/img/arthur-urban.webp",
+        "alt": "Arthur Miyazaki em uma rua urbana, sob uma rede de cabos",
+        "width": 1080,
+        "height": 1920
+      },
+      "portrait": {
+        "src": "assets/img/arthur-portrait.webp",
+        "alt": "Retrato editorial de Arthur Miyazaki em roupa preta diante de uma parede de concreto",
+        "width": 1080,
+        "height": 1440
+      },
+      "gallery": [
+        {
+          "src": "assets/img/creative-work.webp",
+          "alt": "Arthur Miyazaki trabalhando entre notebooks, tablet e desenhos técnicos",
+          "caption": "Design / Code / Systems"
+        },
+        {
+          "src": "assets/img/developer-setup.webp",
+          "alt": "Estação de trabalho de desenvolvimento em luz baixa",
+          "caption": "From intent to deployment"
+        }
+      ],
+      "capabilities": [
+        ["Linguagens", "JavaScript · TypeScript · Python · Rust / Tauri · SQL"],
+        ["Front-end", "React · Next.js · Tailwind CSS · Vite · Figma"],
+        ["Back-end & APIs", "Node.js · REST · JWT / OAuth · Webhooks · JSON"],
+        ["Inteligência Artificial", "LLMs · Prompt Engineering · Multi-agentes · Memória"],
+        ["Automação", "Telegram · WhatsApp · Instagram · Discord · Processos"],
+        ["Dados", "SQLite · PostgreSQL · MySQL · Modelagem · CRUD"],
+        ["Integrações", "APIs de IA · Binance · PicPay · MetaMask · MetaTrader"],
+        ["Infra & Segurança", "Arch Linux · Shell · Deploy · Hardening · Git"]
+      ],
+      "projects": [
+        {
+          "name": "KIRA AI",
+          "type": "Multi-agent assistant",
+          "description": "Assistente inteligente multiplataforma com agentes especializados, contexto, memória persistente, tarefas e plugins integrados ao núcleo de IA.",
+          "stack": ["Python", "Node.js", "LLMs", "SQLite", "Linux"]
+        },
+        {
+          "name": "JARVIS",
+          "type": "Intelligent automation",
+          "description": "Plataforma que conecta Telegram, WhatsApp e APIs financeiras em fluxos de execução orientados por IA e arquitetura extensível.",
+          "stack": ["Node.js", "Python", "REST", "Webhooks", "Messaging"]
+        },
+        {
+          "name": "BLACK VOID",
+          "type": "Immersive web experience",
+          "description": "Experiência institucional sci-fi, minimalista e otimizada, com animações avançadas, canvas dinâmico e navegação fluida.",
+          "stack": ["HTML5", "CSS3", "JavaScript", "Canvas API"],
+          "link": "https://www.blackvoid.dev/pages/arthur.html",
+          "linkLabel": "Experiência interativa"
+        }
+      ],
+      "experience": {
+        "company": "Black Void",
+        "role": "Founder & Full Stack Developer",
+        "start": "Jan 2023",
+        "end": "presente",
+        "place": "Dourados · MS",
+        "lead": "Software house para soluções inteligentes que unem engenharia, automação e IA — em produtos próprios e projetos sob demanda.",
+        "points": [
+          "Liderança do levantamento de requisitos ao deploy",
+          "Websites, dashboards, painéis administrativos e SaaS",
+          "Automações e integrações orientadas à redução de trabalho manual",
+          "Figma, desenvolvimento, testes, Linux e documentação técnica"
+        ],
+        "impact": {
+          "value": "80%",
+          "text": "de redução de trabalho manual em automações desenvolvidas para clientes."
+        }
+      },
+      "links": {
+        "email": "arthurmiyazaki3@gmail.com",
+        "whatsapp": { "label": "+55 67 99161-0074", "url": "https://wa.me/5567991610074" },
+        "github": { "label": "/arthurmi681", "url": "https://github.com/arthurmi681" },
+        "linkedin": { "label": "/in/arthur-miyazaki", "url": "https://www.linkedin.com/in/arthur-miyazaki-8b2119390" },
+        "cv": { "label": "Currículo (PDF)", "url": "assets/docs/curriculo-arthur-miyazaki.pdf" }
+      }
+    }
+  ]
+}

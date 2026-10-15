@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://blackvoid.dev/sitemap.xml
+Sitemap: https://www.blackvoid.dev/sitemap.xml
 
 # Crawlers de IA conhecidos - página otimizada com dados estruturados
 User-agent: GPTBot

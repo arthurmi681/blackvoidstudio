@@ -1,0 +1,5 @@
+# robots.txt — time.blackvoid.dev
+User-agent: *
+Allow: /
+
+Sitemap: https://time.blackvoid.dev/sitemap.xml
