@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Página principal -->
   <url>
-    <loc>https://blackvoid.studio/</loc>
+    <loc>https://blackvoid.dev/</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Página otimizada para IA (prioridade alta para crawlers de IA) -->
   <url>
-    <loc>https://blackvoid.studio/ia-crawler.html</loc>
+    <loc>https://blackvoid.dev/ia-crawler.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -19,151 +19,151 @@
 
   <!-- Páginas principais -->
   <url>
-    <loc>https://blackvoid.studio/pages/sobre.html</loc>
+    <loc>https://blackvoid.dev/pages/sobre.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/servicos.html</loc>
+    <loc>https://blackvoid.dev/pages/servicos.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/ia.html</loc>
+    <loc>https://blackvoid.dev/pages/ia.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/desenvolvimento.html</loc>
+    <loc>https://blackvoid.dev/pages/desenvolvimento.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/automacao.html</loc>
+    <loc>https://blackvoid.dev/pages/automacao.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/infraestrutura.html</loc>
+    <loc>https://blackvoid.dev/pages/infraestrutura.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/cybersecurity.html</loc>
+    <loc>https://blackvoid.dev/pages/cybersecurity.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/branding.html</loc>
+    <loc>https://blackvoid.dev/pages/branding.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/portfolio.html</loc>
+    <loc>https://blackvoid.dev/pages/portfolio.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/casos.html</loc>
+    <loc>https://blackvoid.dev/pages/casos.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/ecossistema.html</loc>
+    <loc>https://blackvoid.dev/pages/ecossistema.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/kira.html</loc>
+    <loc>https://blackvoid.dev/pages/kira.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/tecnologias.html</loc>
+    <loc>https://blackvoid.dev/pages/tecnologias.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/sistemas.html</loc>
+    <loc>https://blackvoid.dev/pages/sistemas.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/contato.html</loc>
+    <loc>https://blackvoid.dev/pages/contato.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/team.html</loc>
+    <loc>https://blackvoid.dev/pages/team.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/carreira.html</loc>
+    <loc>https://blackvoid.dev/pages/carreira.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/blog.html</loc>
+    <loc>https://blackvoid.dev/pages/blog.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/recursos.html</loc>
+    <loc>https://blackvoid.dev/pages/recursos.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/faq.html</loc>
+    <loc>https://blackvoid.dev/pages/faq.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/planos.html</loc>
+    <loc>https://blackvoid.dev/pages/planos.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/documentacao.html</loc>
+    <loc>https://blackvoid.dev/pages/documentacao.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/arthur.html</loc>
+    <loc>https://blackvoid.dev/pages/arthur.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/Starter.html</loc>
+    <loc>https://blackvoid.dev/pages/Starter.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://blackvoid.studio/pages/em-breve.html</loc>
+    <loc>https://blackvoid.dev/pages/em-breve.html</loc>
     <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
