@@ -1,171 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blackvoid.dev/</loc>
+    <loc>https://www.blackvoid.dev/</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/sobre.html</loc>
+    <loc>https://www.blackvoid.dev/pages/sobre.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/servicos.html</loc>
+    <loc>https://www.blackvoid.dev/pages/servicos.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/ia.html</loc>
+    <loc>https://www.blackvoid.dev/pages/ia.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/desenvolvimento.html</loc>
+    <loc>https://www.blackvoid.dev/pages/desenvolvimento.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/automacao.html</loc>
+    <loc>https://www.blackvoid.dev/pages/automacao.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/infraestrutura.html</loc>
+    <loc>https://www.blackvoid.dev/pages/infraestrutura.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/cybersecurity.html</loc>
+    <loc>https://www.blackvoid.dev/pages/cybersecurity.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/branding.html</loc>
+    <loc>https://www.blackvoid.dev/pages/branding.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/portfolio.html</loc>
+    <loc>https://www.blackvoid.dev/pages/portfolio.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/casos.html</loc>
+    <loc>https://www.blackvoid.dev/pages/casos.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/ecossistema.html</loc>
+    <loc>https://www.blackvoid.dev/pages/ecossistema.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/kira.html</loc>
+    <loc>https://www.blackvoid.dev/pages/kira.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/tecnologias.html</loc>
+    <loc>https://www.blackvoid.dev/pages/tecnologias.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/sistemas.html</loc>
+    <loc>https://www.blackvoid.dev/pages/sistemas.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/contato.html</loc>
+    <loc>https://www.blackvoid.dev/pages/contato.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/team.html</loc>
+    <loc>https://www.blackvoid.dev/pages/team.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/carreira.html</loc>
+    <loc>https://www.blackvoid.dev/pages/carreira.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/blog.html</loc>
+    <loc>https://www.blackvoid.dev/pages/blog.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/recursos.html</loc>
+    <loc>https://www.blackvoid.dev/pages/recursos.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/faq.html</loc>
+    <loc>https://www.blackvoid.dev/pages/faq.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/planos.html</loc>
+    <loc>https://www.blackvoid.dev/pages/planos.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/documentacao.html</loc>
+    <loc>https://www.blackvoid.dev/pages/documentacao.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/politica-de-privacidade</loc>
+    <loc>https://www.blackvoid.dev/politica-de-privacidade</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/arthur.html</loc>
+    <loc>https://www.blackvoid.dev/pages/arthur.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/equipe/arthur/</loc>
+    <loc>https://www.blackvoid.dev/equipe/arthur/</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/Starter.html</loc>
+    <loc>https://www.blackvoid.dev/pages/Starter.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://blackvoid.dev/pages/em-breve.html</loc>
+    <loc>https://www.blackvoid.dev/pages/em-breve.html</loc>
     <lastmod>2026-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
   </url>
 </urlset>
