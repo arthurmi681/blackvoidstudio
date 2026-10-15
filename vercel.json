@@ -14,12 +14,53 @@
       "destination": "https://sistema-branding-arthurmiyazaki3-1925s-projects.vercel.app/branding/:path*"
     },
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-Web|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|Google-Extended|VertexAI|Gemini|Bard|bingbot|Bingbot|MSNBot|Microsoft-Web-Exploration|Meta-ExternalAgent|Meta-ExternalFetcher|facebookexternalhit|Applebot|AppleBot|CohereBot|MistralBot|HuggingFaceBot|Bytespider|YouBot|DuckDuckBot|PetalBot).*"
+        }
+      ],
+      "destination": "/pages/ia-crawler.html"
+    },
+    {
+      "source": "/index.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-Web|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|Google-Extended|VertexAI|Gemini|Bard|bingbot|Bingbot|MSNBot|Microsoft-Web-Exploration|Meta-ExternalAgent|Meta-ExternalFetcher|facebookexternalhit|Applebot|AppleBot|CohereBot|MistralBot|HuggingFaceBot|Bytespider|YouBot|DuckDuckBot|PetalBot).*"
+        }
+      ],
+      "destination": "/pages/ia-crawler.html"
+    },
+    {
+      "source": "/home.html",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-Web|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|Google-Extended|VertexAI|Gemini|Bard|bingbot|Bingbot|MSNBot|Microsoft-Web-Exploration|Meta-ExternalAgent|Meta-ExternalFetcher|facebookexternalhit|Applebot|AppleBot|CohereBot|MistralBot|HuggingFaceBot|Bytespider|YouBot|DuckDuckBot|PetalBot).*"
+        }
+      ],
+      "destination": "/pages/ia-crawler.html"
+    },
+    {
       "source": "/ia-crawler",
       "destination": "/pages/ia-crawler.html"
     },
     {
       "source": "/ia-crawler.html",
       "destination": "/pages/ia-crawler.html"
+    },
+    {
+      "source": "/",
+      "destination": "/home.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/home.html"
     }
   ],
   "headers": [
@@ -50,6 +91,52 @@
         {
           "key": "X-Robots-Tag",
           "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/pages/ia-crawler.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "User-Agent"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": ".*(GPTBot|OAI-SearchBot|ChatGPT-User|ClaudeBot|Claude-Web|Claude-SearchBot|anthropic-ai|PerplexityBot|Perplexity-User|Google-Extended|VertexAI|Gemini|Bard|bingbot|Bingbot|MSNBot|Microsoft-Web-Exploration|Meta-ExternalAgent|Meta-ExternalFetcher|facebookexternalhit|Applebot|AppleBot|CohereBot|MistralBot|HuggingFaceBot|Bytespider|YouBot|DuckDuckBot|PetalBot).*"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "index, follow"
+        },
+        {
+          "key": "X-Served-Content",
+          "value": "ia-crawler"
         }
       ]
     }

@@ -19,13 +19,21 @@ for page in html_files:
         clean = target.split('#', 1)[0].split('?', 1)[0]
         if not clean:
             continue
-        candidate = (page.parent / clean).resolve()
+        if clean.startswith('/'):
+            # Caminho relativo à raiz do site (o outputDirectory da Vercel é a raiz do repo)
+            candidate = (ROOT / clean.lstrip('/')).resolve()
+        else:
+            candidate = (page.parent / clean).resolve()
         if not candidate.exists():
             missing.append((page.relative_to(ROOT), target))
     for target in re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', text):
         if target.startswith(('http:', 'https:', 'data:', '/manus-storage/')):
             continue
-        candidate = (page.parent / target.split('?', 1)[0]).resolve()
+        clean_img = target.split('?', 1)[0]
+        if clean_img.startswith('/'):
+            candidate = (ROOT / clean_img.lstrip('/')).resolve()
+        else:
+            candidate = (page.parent / clean_img).resolve()
         if not candidate.exists():
             missing_images.append((page.relative_to(ROOT), target))
 
